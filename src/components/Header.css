@@ -58,3 +58,8 @@
 
   filter: invert(100%) drop-shadow(0 0 5px #FFF01F);
 }
+
+.disabled {
+  opacity: 0.5;
+  z-index: 9999;
+}
