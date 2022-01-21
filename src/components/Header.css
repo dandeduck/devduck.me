@@ -1,0 +1,60 @@
+.Header {
+  padding-top: 1rem;
+  vertical-align: middle;
+}
+
+.Header-link {
+  font-family: 'Neonderthaw', cursive;
+  font-size: 3rem;
+  color: white;
+}
+
+.Header-link + .Header-link {
+  margin-left: 7rem;
+}
+
+.purpleNeon {
+  text-shadow:
+    0 0 7px #fff,
+    0 0 9px #fff,
+    0 0 20px #B026FF,
+    0 0 30px #B026FF;
+}
+
+.yelloNeon {
+  text-shadow:
+    0 0 7px #fff,
+    0 0 9px #fff,
+    0 0 20px #FFF01F,
+    0 0 30px #FFF01F;
+}
+
+.brokenNeon {
+  text-shadow: 0 0 7px #fff;
+
+  animation: flicker 3s infinite alternate;
+}
+
+@keyframes flicker {
+  0%, 10% {
+    text-shadow:
+      0 0 7px #fff,
+      0 0 9px #fff,
+      0 0 20px #F72119,
+      0 0 30px #F72119;
+  }
+
+  3% {
+    text-shadow: 0 0 7px #fff;
+  }
+}
+
+.neonDuck {
+  transform: scaleX(-1);
+  margin-right: 7rem;
+
+  rotate: 45deg;
+  width: 48px;
+
+  filter: invert(100%) drop-shadow(0 0 5px #FFF01F);
+}
