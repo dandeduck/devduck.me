@@ -1,11 +1,15 @@
 import Header from './components/Header';
+import Daily from './components/Daily';
 import './App.css';
 
 export default function App() {
 
   return (
     <div className="App">
-      <Header/>
+      <div className='container'>
+        <Header/>
+        <Daily/>
+      </div>
     </div>
   );
 }
