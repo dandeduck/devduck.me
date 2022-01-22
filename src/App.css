@@ -14,14 +14,7 @@
   margin-inline: auto;
 }
 
-a {
-  text-decoration: none;
-  font-family: 'Neonderthaw', cursive;
-  color: white;
-  
-  text-shadow:
-    0 0 7px #fff,
-    0 0 9px #fff,
-    0 0 20px #1FFF0F ,
-    0 0 30px #1FFF0F ;
+.content-container {
+  display: flex;
+  flex-direction: row;
 }

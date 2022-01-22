@@ -8,8 +8,9 @@ export default function Header() {
       <a href='/'>
         <img src={duck} className='neonDuck' alt="duck"/>
       </a>
-      <a className='Header-link purpleNeon' href='/'>my work</a>
-      <a className='Header-link brokenNeon' href='/'>contact</a>
+      <a className='Header-link purpleNeon' href='/'>daily</a>
+      <a className='Header-link brokenNeon' href='/'>my work</a>
+      <a className='Header-link contactLink' href='/'>contact</a>
     </header>
   );
 }

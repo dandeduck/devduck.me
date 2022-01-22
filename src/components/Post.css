@@ -1,5 +1,6 @@
 .Post {
   display: flex;
+  position: relative;
 
   box-shadow:
     rgba(240, 46, 170, 0.5) 0 0 3px,
@@ -19,4 +20,8 @@
 
 img {
   width: 100%;
+}
+
+a {
+  color: rgba(240, 46, 170);
 }

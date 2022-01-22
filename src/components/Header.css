@@ -1,11 +1,14 @@
 .Header {
   padding-top: 2rem;
-  padding-bottom: 3rem;
+  padding-bottom: 5rem;
   width: fit-content;
   align-self: center;
 }
 
 .Header-link {
+  font-family: 'Neonderthaw', cursive;
+  text-decoration: none;
+  color: white;
   font-size: 3rem;
   width: auto;
 }
@@ -28,6 +31,16 @@
     0 0 9px #fff,
     0 0 20px #FFF01F,
     0 0 30px #FFF01F;
+}
+
+.contactLink {
+  position: absolute;
+  right: 6rem;
+  text-shadow:
+    0 0 7px #fff,
+    0 0 9px #fff,
+    0 0 20px rgba(240, 46, 170),
+    0 0 30px rgba(240, 46, 170);
 }
 
 .brokenNeon {

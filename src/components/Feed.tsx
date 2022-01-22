@@ -4,7 +4,7 @@ import './Feed.css';
 export default function Daily() {
   const short : string = `
   # Hello guys!
-  and gals
+  and gals [a link](https://www.google.com)
   `
   const long : string = `
   # Welcome the Destroyer!
