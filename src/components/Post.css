@@ -1,6 +1,11 @@
 .Post {
-  border: solid white 1px;
-  border-radius: 10px;
+  box-shadow:
+    rgba(240, 46, 170, 0.5) 0 0 3px,
+    rgba(240, 46, 170, 0.4) -5px 5px, 
+    rgba(240, 46, 170, 0.3) -10px 10px, 
+    rgba(240, 46, 170, 0.2) -15px 15px, 
+    rgba(240, 46, 170, 0.1) -20px 20px, 
+    rgba(240, 46, 170, 0.05) -25px 25px;
 
   display: flex;
   flex-direction: row;
@@ -9,16 +14,9 @@
 }
 
 .text {
-  padding-left: 1rem;
+  padding-inline: 1rem;
 }
 
-.cover-container {  
-  height: 20rem;
-  width: min-content;
-}
-
-.cover {
-  border-radius: 10px;
-  height:100%;
-  width: auto;
+img {
+  width: 100%;
 }
