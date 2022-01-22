@@ -23,8 +23,8 @@ export default function Daily() {
   `;
   return (
     <div className='Feed'>
-      <Post markdown={short}/>
-      <Post markdown={long}/>
+      <Post markdown={short} project='Tracer'/>
+      <Post markdown={long} project='Asteroids UNLIMITED'/>
     </div>
   );
 }
