@@ -1,4 +1,6 @@
 .Post {
+  display: flex;
+
   box-shadow:
     rgba(240, 46, 170, 0.5) 0 0 3px,
     rgba(240, 46, 170, 0.4) -5px 5px, 
@@ -7,14 +9,12 @@
     rgba(240, 46, 170, 0.1) -20px 20px, 
     rgba(240, 46, 170, 0.05) -25px 25px;
 
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  min-height: 20rem;
+  margin-bottom: 6rem;
 }
 
-.text {
+.markdown {
   padding-inline: 1rem;
+  font-family: 'Roboto', sans-serif;
 }
 
 img {

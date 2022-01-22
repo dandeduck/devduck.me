@@ -5,7 +5,7 @@ import './Post.css';
 export default function Post(props : {markdown: string}) {
   return (
     <div className='Post'>
-      <span className='text'><ReactMarkdown  remarkPlugins={[gfm]}>{props.markdown}</ReactMarkdown></span>
+      <span className='markdown'><ReactMarkdown  remarkPlugins={[gfm]}>{props.markdown}</ReactMarkdown></span>
     </div>
   );
 }

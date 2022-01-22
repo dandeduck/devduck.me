@@ -2,10 +2,14 @@ import Post from './Post';
 import './Feed.css';
 
 export default function Daily() {
-  const text : string = `
+  const short : string = `
+  # Hello guys!
+  and gals
+  `
+  const long : string = `
   # Welcome the Destroyer!
   our second ship
-  
+
   ![Destroyer](https://res.cloudinary.com/dandeduck/image/upload/v1642857955/cld-sample.jpg)
   ## Second heading
   some more
@@ -19,7 +23,8 @@ export default function Daily() {
   `;
   return (
     <div className='Feed'>
-      <Post markdown={text}/>
+      <Post markdown={short}/>
+      <Post markdown={long}/>
     </div>
   );
 }
