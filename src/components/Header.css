@@ -1,12 +1,13 @@
 .Header {
   padding-top: 1rem;
-  vertical-align: middle;
+  width: fit-content;
 }
 
 .Header-link {
   font-family: 'Neonderthaw', cursive;
   font-size: 3rem;
   color: white;
+  width: auto;
 }
 
 .Header-link + .Header-link {
@@ -57,9 +58,4 @@
   width: 48px;
 
   filter: invert(100%) drop-shadow(0 0 5px #FFF01F);
-}
-
-.disabled {
-  opacity: 0.5;
-  z-index: 9999;
 }
