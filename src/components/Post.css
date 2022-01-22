@@ -1,0 +1,24 @@
+.Post {
+  border: solid white 1px;
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  min-height: 20rem;
+}
+
+.text {
+  padding-left: 1rem;
+}
+
+.cover-container {  
+  height: 20rem;
+  width: min-content;
+}
+
+.cover {
+  border-radius: 10px;
+  height:100%;
+  width: auto;
+}

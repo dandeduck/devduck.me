@@ -1,5 +1,5 @@
 import Header from './components/Header';
-import Daily from './components/Daily';
+import Feed from './components/Feed';
 import './App.css';
 
 export default function App() {
@@ -8,7 +8,7 @@ export default function App() {
     <div className="App">
       <div className='container'>
         <Header/>
-        <Daily/>
+        <Feed/>
       </div>
     </div>
   );

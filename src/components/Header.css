@@ -1,6 +1,7 @@
 .Header {
   padding-top: 1rem;
   width: fit-content;
+  align-self: center;
 }
 
 .Header-link {
