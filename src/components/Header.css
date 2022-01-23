@@ -1,7 +1,20 @@
 .Header {
   padding-top: 2rem;
   padding-bottom: 5rem;
+
   align-self: center;
+  display: flex;
+  align-items: center;
+  justify-content:space-around;
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+}
+
+* + .heading {
+  margin-left: 7rem;
 }
 
 .Header-link {
@@ -11,10 +24,6 @@
   color: white;
   font-size: 1.8rem;
 
-  display: inline-block;
-  width: 15rem;
-  text-align: center;
-
   transition: letter-spacing 250ms ease-out;
 }
 
@@ -22,10 +31,23 @@
   letter-spacing: 0.5rem;
 }
 
+.underline {
+  transform: scale(0);
+  height: 2px;
+  background-color: rgba(240, 46, 170); 
+  border-radius: 1px;
+
+  transition: transform 250ms ease-out;
+}
+
+.Header-link:hover + .underline {
+  transform: translateX(-4px) scale(1);
+}
+
 .neonDuck {
-  margin-right: 5rem;
   width: 48px;
 
-  transform: translateY(20%) scaleX(-1);
+  transform: scaleX(-1);
   filter: invert(100%) drop-shadow(0 0 5px #FFF01F);
+  will-change: filter;
 }

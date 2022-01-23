@@ -7,10 +7,22 @@ export default function Header() {
       <a href='/'>
         <img src={duck} className='neonDuck' alt="duck"/>
       </a>
-      <a className='Header-link' href='/'>about me</a>
-      <a className='Header-link' href='/'>daily</a>
-      <a className='Header-link' href='/'>my work</a>
-      <a className='Header-link' href='/'>contact</a>
+      <div className='heading'>
+        <a className='Header-link' href='/'>about me</a>
+        <span className='underline'></span>
+      </div>
+      <div className='heading'>
+        <a className='Header-link' href='/'>daily</a>
+        <span className='underline'></span>
+      </div>
+      <div className='heading'>
+        <a className='Header-link' href='/'>my work</a>
+        <span className='underline'></span>
+      </div>
+      <div className='heading'>
+        <a className='Header-link' href='/'>contact</a>
+        <span className='underline'></span>
+      </div>
     </header>
   );
 }
