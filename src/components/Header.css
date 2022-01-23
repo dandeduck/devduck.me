@@ -1,74 +1,31 @@
 .Header {
   padding-top: 2rem;
   padding-bottom: 5rem;
-  width: fit-content;
   align-self: center;
 }
 
 .Header-link {
-  font-family: 'Neonderthaw', cursive;
+  font-family: 'Major Mono Display', monospace;
   text-decoration: none;
+
   color: white;
-  font-size: 3rem;
-  width: auto;
+  font-size: 1.8rem;
+
+  display: inline-block;
+  width: 15rem;
+  text-align: center;
+
+  transition: letter-spacing 250ms ease-out;
 }
 
-.Header-link + .Header-link {
-  margin-left: 7rem;
-}
-
-.purpleNeon {
-  text-shadow:
-    0 0 7px #fff,
-    0 0 9px #fff,
-    0 0 20px #B026FF,
-    0 0 30px #B026FF;
-}
-
-.yelloNeon {
-  text-shadow:
-    0 0 7px #fff,
-    0 0 9px #fff,
-    0 0 20px #FFF01F,
-    0 0 30px #FFF01F;
-}
-
-.contactLink {
-  position: absolute;
-  right: 6rem;
-  text-shadow:
-    0 0 7px #fff,
-    0 0 9px #fff,
-    0 0 20px rgba(240, 46, 170),
-    0 0 30px rgba(240, 46, 170);
-}
-
-.brokenNeon {
-  text-shadow: 0 0 7px #fff;
-
-  animation: flicker 3s infinite alternate;
-}
-
-@keyframes flicker {
-  0%, 10% {
-    text-shadow:
-      0 0 7px #fff,
-      0 0 9px #fff,
-      0 0 20px #F72119,
-      0 0 30px #F72119;
-  }
-
-  3% {
-    text-shadow: 0 0 7px #fff;
-  }
+.Header-link:hover {
+  letter-spacing: 0.5rem;
 }
 
 .neonDuck {
-  transform: scaleX(-1);
-  margin-right: 7rem;
-
-  rotate: 45deg;
+  margin-right: 5rem;
   width: 48px;
 
+  transform: translateY(20%) scaleX(-1);
   filter: invert(100%) drop-shadow(0 0 5px #FFF01F);
 }

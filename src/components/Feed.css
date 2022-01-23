@@ -1,7 +1,6 @@
 .Feed {
   width: 60rem;
-
-  font-family: sans-serif;
+  align-self: center;
 }
 
 @media only screen and (max-width: 1000px) {
