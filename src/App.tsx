@@ -9,9 +9,11 @@ export default function App() {
     <div className="App">
       <BrowserRouter>
         <Header/>
-        <Routes>
-          <Route path="/" element={<Feed />}/>
-        </Routes>
+        <div className='container'>
+          <Routes>
+            <Route path="/" element={<Feed />}/>
+          </Routes>
+        </div>
       </BrowserRouter>
     </div>
   );
