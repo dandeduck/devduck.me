@@ -3,7 +3,7 @@ import './Feed.css';
 
 export default function Daily() {
   const short : string = `
-  # Hello guys!
+  # Update #24
   and gals [a link](https://www.google.com)
   `
   const long : string = `

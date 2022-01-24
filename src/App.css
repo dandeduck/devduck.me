@@ -3,15 +3,17 @@
   background-color: #0D1117;
   min-height: 100vh;
   color: white;
+
+  display: block;
+  margin-inline: auto;
 }
 
 .container {
-  display: flex;
-  flex-direction: column;
+  padding-top: 8rem;
+  display: block;
   width: fit-content;
-  height: 100vh;
-
   margin-inline: auto;
+  height: 100vh;
 }
 
 .content-container {

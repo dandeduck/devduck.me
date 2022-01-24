@@ -1,11 +1,15 @@
 .Header {
-  padding-top: 2rem;
-  padding-bottom: 5rem;
+  position: fixed;
+  background: #0D1117;
+  opacity: 0.8;
 
-  align-self: center;
   display: flex;
   align-items: center;
-  justify-content:space-around;
+  justify-content: center;
+
+  width: 100%;
+  padding-inline: auto;
+  z-index: 1;
 }
 
 .heading {
@@ -18,11 +22,12 @@
 }
 
 .Header-link {
+  padding-top: 1rem;
   font-family: 'Major Mono Display', monospace;
   text-decoration: none;
 
   color: white;
-  font-size: 1.8rem;
+  font-size: 1.2rem;
 
   transition: letter-spacing 250ms ease-out;
 }
@@ -32,6 +37,7 @@
 }
 
 .underline {
+  margin-bottom: 1rem;
   transform: scale(0);
   height: 2px;
   background-color: rgba(240, 46, 170); 
@@ -45,7 +51,7 @@
 }
 
 .neonDuck {
-  width: 48px;
+  width: 40px;
 
   transform: scaleX(-1);
   filter: invert(100%) drop-shadow(0 0 5px #FFF01F);
