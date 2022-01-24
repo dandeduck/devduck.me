@@ -1,0 +1,43 @@
+.Post {
+  display: flex;
+  position: relative;
+  background-color: #161b22;
+
+  box-shadow:
+    rgba(240, 46, 170, 0.4) -5px 5px, 
+    rgba(240, 46, 170, 0.3) -10px 10px, 
+    rgba(240, 46, 170, 0.2) -15px 15px, 
+    rgba(240, 46, 170, 0.1) -20px 20px, 
+    rgba(240, 46, 170, 0.05) -25px 25px;
+
+  margin-bottom: 6rem;
+}
+
+.markdown {
+  padding-inline: 1rem;
+  font-family: 'NRT Reg', sans-serif;
+}
+
+img {
+  width: 100%;
+}
+
+a {
+  color: rgba(240, 46, 170);
+}
+
+.project {
+  position: absolute;
+  right: 0;
+  top: -1.5rem;
+
+  color: grey;
+}
+
+.date {
+  position: absolute;
+  left: 0;
+  top: -1.5rem;
+
+  color: grey;
+}

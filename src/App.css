@@ -1,12 +1,14 @@
 .App {
-  background-color: rgb(28,27,34);/*rgb(35, 34, 43)*/
   min-height: 100vh;
-
-  text-align: center;
-  font-size: calc(10px + 2vmin);
+  height: fit-content;
   color: white;
+
+  display: block;
+  margin-inline: auto;
 }
 
-a {
-  text-decoration: none;
+.container {
+  display: block;
+  width: fit-content;
+  margin-inline: auto;
 }

@@ -1,0 +1,10 @@
+.Feed {
+  width: 60rem;
+  align-self: center;
+}
+
+@media only screen and (max-width: 1000px) {
+  .Feed {
+    width: 70vw;
+  }
+}

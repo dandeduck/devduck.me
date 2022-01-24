@@ -1,65 +1,97 @@
-.Header {
-  padding-top: 1rem;
-  vertical-align: middle;
+.navContainer {
+  margin-bottom: 4rem;
+  position: sticky;
+  top: 0;
+  background: rgba(13, 17, 23, 0.7);
+  backdrop-filter: blur(4px);
+  z-index: 9999;
 }
 
-.Header-link {
-  font-family: 'Neonderthaw', cursive;
-  font-size: 3rem;
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-inline: auto;
+
+  width: 60rem;
+}
+
+@media only screen and (max-width: 1000px) {
+  .navbar {
+    width: 70vw;
+  }
+}
+
+.navbar-link {
+  margin-block: 1rem;
+  font-family: 'Major Mono Display', monospace;
+  text-decoration: none;
+  position: relative;
+
   color: white;
+  font-size: 1.2rem;
+
+  transition: all 250ms ease-out;
 }
 
-.Header-link + .Header-link {
-  margin-left: 7rem;
+.navbar-link:hover {
+  letter-spacing: 0.5em;
+  padding-left: 0.5em;
 }
 
-.purpleNeon {
-  text-shadow:
-    0 0 7px #fff,
-    0 0 9px #fff,
-    0 0 20px #B026FF,
-    0 0 30px #B026FF;
+.underline::after {
+  content: "";
+
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+
+  margin-bottom: 1rem;
+  transform: scale(0);
+  height: 2px;
+  background-color: rgba(240, 46, 170); 
+  border-radius: 1px;
+
+  will-change: transform;
+
+  transition: transform 250ms ease-out;
 }
 
-.yelloNeon {
-  text-shadow:
-    0 0 7px #fff,
-    0 0 9px #fff,
-    0 0 20px #FFF01F,
-    0 0 30px #FFF01F;
-}
-
-.brokenNeon {
-  text-shadow: 0 0 7px #fff;
-
-  animation: flicker 3s infinite alternate;
-}
-
-@keyframes flicker {
-  0%, 10% {
-    text-shadow:
-      0 0 7px #fff,
-      0 0 9px #fff,
-      0 0 20px #F72119,
-      0 0 30px #F72119;
-  }
-
-  3% {
-    text-shadow: 0 0 7px #fff;
-  }
+.underline:hover::after {
+  transform: scale(1);
 }
 
 .neonDuck {
+  width: 40px;
+
   transform: scaleX(-1);
-  margin-right: 7rem;
-
-  rotate: 45deg;
-  width: 48px;
-
   filter: invert(100%) drop-shadow(0 0 5px #FFF01F);
+  position: relative;
 }
 
-.disabled {
-  opacity: 0.5;
-  z-index: 9999;
+.duck {
+  position: relative;
+}
+
+.duck::after {
+  content: "- \"quack!\"";
+  /* content: ""; */
+  font-style: italic;
+  color: #fff01f;
+
+  display: inline-block;
+  width: 5em;
+  
+  position: absolute;
+  top: 3rem;
+  left: 1rem;
+  opacity: 0;
+
+  pointer-events: none;
+  transition: opacity 1000ms linear;
+}
+
+.duck:hover::after {
+  opacity: 0.8;
 }
