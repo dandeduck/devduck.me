@@ -1,7 +1,7 @@
 .App {
-  overflow: auto;
   background-color: #0D1117;
   min-height: 100vh;
+  height: fit-content;
   color: white;
 
   display: block;
@@ -9,14 +9,8 @@
 }
 
 .container {
-  padding-top: 8rem;
   display: block;
   width: fit-content;
   margin-inline: auto;
   height: 100vh;
-}
-
-.content-container {
-  display: flex;
-  flex-direction: row;
 }

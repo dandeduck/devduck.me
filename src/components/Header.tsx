@@ -3,7 +3,7 @@ import './Header.css';
 
 export default function Header() {
   return (
-    <header className='Header'>
+    <nav className='Header'>
       <a href='/'>
         <img src={duck} className='neonDuck' alt="duck"/>
       </a>
@@ -23,6 +23,6 @@ export default function Header() {
         <a className='Header-link' href='/'>contact</a>
         <span className='underline'></span>
       </div>
-    </header>
+    </nav>
   );
 }

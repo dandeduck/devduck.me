@@ -1,7 +1,9 @@
 .Header {
-  position: fixed;
-  background: #0D1117;
-  opacity: 0.8;
+  margin-bottom: 5rem;
+  position: sticky;
+  top: 0;
+  background: rgba(13, 17, 23, 0.7);
+  backdrop-filter: blur(4px);
 
   display: flex;
   align-items: center;
