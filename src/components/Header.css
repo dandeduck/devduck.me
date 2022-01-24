@@ -7,7 +7,7 @@
   z-index: 9999;
 }
 
-.Header {
+.navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -16,7 +16,13 @@
   width: 60rem;
 }
 
-.Header-link {
+@media only screen and (max-width: 1000px) {
+  .navbar {
+    width: 70vw;
+  }
+}
+
+.navbar-link {
   margin-block: 1rem;
   font-family: 'Major Mono Display', monospace;
   text-decoration: none;
@@ -28,7 +34,7 @@
   transition: all 250ms ease-out;
 }
 
-.Header-link:hover {
+.navbar-link:hover {
   letter-spacing: 0.5em;
   padding-left: 0.5em;
 }
@@ -61,5 +67,31 @@
 
   transform: scaleX(-1);
   filter: invert(100%) drop-shadow(0 0 5px #FFF01F);
-  will-change: filter;
+  position: relative;
+}
+
+.duck {
+  position: relative;
+}
+
+.duck::after {
+  content: "- \"quack!\"";
+  /* content: ""; */
+  font-style: italic;
+  color: #fff01f;
+
+  display: inline-block;
+  width: 5em;
+  
+  position: absolute;
+  top: 3rem;
+  left: 1rem;
+  opacity: 0;
+
+  pointer-events: none;
+  transition: opacity 1000ms linear;
+}
+
+.duck:hover::after {
+  opacity: 0.8;
 }
