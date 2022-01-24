@@ -1,44 +1,59 @@
-.Header {
+.navContainer {
   margin-bottom: 5rem;
   position: sticky;
   top: 0;
   background: rgba(13, 17, 23, 0.7);
   backdrop-filter: blur(4px);
+}
 
+.Header {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  margin-inline: auto;
 
-  width: 100%;
-  padding-inline: auto;
+  width: 60rem;
   z-index: 1;
 }
 
-.heading {
-  display: flex;
-  flex-direction: column;
-}
-
-* + .heading {
+/* * + .Header-link {
   margin-left: 7rem;
-}
+} */
 
 .Header-link {
   padding-top: 1rem;
+  padding-bottom: 0.1rem;
   font-family: 'Major Mono Display', monospace;
   text-decoration: none;
+  position: relative;
 
   color: white;
   font-size: 1.2rem;
 
-  transition: letter-spacing 250ms ease-out;
+  transition: all 250ms ease-out;
 }
 
 .Header-link:hover {
-  letter-spacing: 0.5rem;
+  letter-spacing: 0.5em;
+  padding-left: 0.5em;
 }
 
-.underline {
+.underline::after {
+  /* background-repeat: no-repeat;
+  background-size: 0% 2px;
+  background-image: linear-gradient(rgba(240, 46, 170), rgba(240, 46, 170)); 
+  background-position: bottom center;
+  border-radius: 1px;
+
+  transition: all 250ms ease-out; */
+  content: "";
+
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  /* transform-origin: center; */
+
   margin-bottom: 1rem;
   transform: scale(0);
   height: 2px;
@@ -48,9 +63,14 @@
   transition: transform 250ms ease-out;
 }
 
-.Header-link:hover + .underline {
-  transform: translateX(-4px) scale(1);
+.underline:hover::after {
+  transform: scale(1);
 }
+/* 
+.underline:hover {
+  background-size: 100% 2px;
+  background-position: bottom left;
+} */
 
 .neonDuck {
   width: 40px;

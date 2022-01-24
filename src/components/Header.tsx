@@ -3,26 +3,16 @@ import './Header.css';
 
 export default function Header() {
   return (
-    <nav className='Header'>
-      <a href='/'>
-        <img src={duck} className='neonDuck' alt="duck"/>
-      </a>
-      <div className='heading'>
-        <a className='Header-link' href='/'>about me</a>
-        <span className='underline'></span>
-      </div>
-      <div className='heading'>
-        <a className='Header-link' href='/'>daily</a>
-        <span className='underline'></span>
-      </div>
-      <div className='heading'>
-        <a className='Header-link' href='/'>my work</a>
-        <span className='underline'></span>
-      </div>
-      <div className='heading'>
-        <a className='Header-link' href='/'>contact</a>
-        <span className='underline'></span>
-      </div>
-    </nav>
+    <div className='navContainer'>
+      <nav className='Header'>
+        <a href='/'>
+          <img src={duck} className='neonDuck' alt="duck"/>
+        </a>
+        <a className='Header-link underline' href='/'>about me</a>
+        <a className='Header-link underline' href='/'>daily</a>
+        <a className='Header-link underline' href='/'>my work</a>
+        <a className='Header-link underline' href='/'>contact</a>
+      </nav>
+    </div>
   );
 }
