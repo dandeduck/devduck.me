@@ -4,6 +4,7 @@
   top: 0;
   background: rgba(13, 17, 23, 0.7);
   backdrop-filter: blur(4px);
+  z-index: 9999;
 }
 
 .Header {
@@ -13,12 +14,10 @@
   margin-inline: auto;
 
   width: 60rem;
-  z-index: 1;
 }
 
-
 .Header-link {
-  padding-block: 1rem;
+  margin-block: 1rem;
   font-family: 'Major Mono Display', monospace;
   text-decoration: none;
   position: relative;
@@ -47,6 +46,8 @@
   height: 2px;
   background-color: rgba(240, 46, 170); 
   border-radius: 1px;
+
+  will-change: transform;
 
   transition: transform 250ms ease-out;
 }
