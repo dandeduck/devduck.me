@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import duck from './duck.svg';
 import './Header.css';
 
@@ -8,10 +9,10 @@ export default function Header() {
         <div className='duck'>
           <img src={duck} className='neonDuck' alt="duck"/>
         </div>
-        <a className='navbar-link underline' href='/'>about me</a>
-        <a className='navbar-link underline' href='/'>daily</a>
-        <a className='navbar-link underline' href='/'>my work</a>
-        <a className='navbar-link underline' href='/'>contact</a>
+        <Link to={'/'} className='navbar-link underline'>about me</Link>
+        <Link to={'/'} className='navbar-link underline'>daily</Link>
+        <Link to={'/'} className='navbar-link underline'>my work</Link>
+        <Link to={'/'} className='navbar-link underline'>contact</Link>
       </nav>
     </div>
   );

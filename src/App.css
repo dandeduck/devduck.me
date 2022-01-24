@@ -3,12 +3,6 @@
   height: fit-content;
   color: white;
 
-  display: block;
-  margin-inline: auto;
-}
-
-.container {
-  display: block;
   width: fit-content;
   margin-inline: auto;
 }
