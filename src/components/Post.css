@@ -28,10 +28,16 @@ a {
 
 .project {
   position: absolute;
-  text-align: center;
   right: 0;
   top: -1.5rem;
 
-  font-size: 1rem;
+  color: grey;
+}
+
+.date {
+  position: absolute;
+  left: 0;
+  top: -1.5rem;
+
   color: grey;
 }
