@@ -7,10 +7,11 @@
   font-family: 'Major Mono Display', monospace;
   font-size: 3rem;
   letter-spacing: 0.5em;
+  margin: 0;
 }
 
 .inputs {
-  margin-top: 7rem;
+  margin-top: 5em;
   width: fit-content;
   margin-inline: auto;
 }
@@ -26,11 +27,11 @@
   text-align: center;
   color: white;
   font-family: "Monaco";
-  font-size: 1.5rem;
+  font-size: 1.5em;
 
   display: inline-block;
-  width: 400px;
-  height: 40px;
+  width: 25em;
+  height: 2.5em;
 
   background: #090b0f;
   border: 0;
@@ -39,7 +40,7 @@
 }
 
 .big {
-  height: 250px;
+  height: 15.625em;
   text-align: start;
   padding: 1rem;
 }
@@ -52,7 +53,7 @@ label {
 
 .text {
   font-family: "Monaco";
-  font-size: 1.5rem;
+  font-size: 1.5em;
 }
 
 .small {
@@ -62,13 +63,32 @@ label {
 
 .second-heading {
   display: block;
-  margin-bottom: 0.3rem;
-  margin-top: 3rem;
+  margin-bottom: 0.3em;
+  margin-top: 3em;
 }
 
 .submit {
-  margin-top: 3rem;
+  margin-top: 2em;
   font-family: "Monaco";
-  font-size: 2rem;
+  font-size: 2em;
+  border-radius: 5px;
+  border: 0;
   box-shadow: rgba(240, 46, 170, 0.4) 0px 5px, rgba(240, 46, 170, 0.3) 0px 10px, rgba(240, 46, 170, 0.2) 0px 15px, rgba(240, 46, 170, 0.1) 0px 20px, rgba(240, 46, 170, 0.05) 0px 25px;
 }
+
+@media only screen and (max-height: 1000px) {
+  .contact {
+    font-size: 12px;
+  }
+  
+  .big {
+    height: 100px;
+  }
+  
+  .info {
+    position: absolute;
+    top: 250px;
+    left: 50px;
+  }
+}
+
