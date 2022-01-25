@@ -35,13 +35,6 @@
   justify-content: space-between;
 }
 
-.entry {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .line + .line {
   margin-top: 3em;
 }
@@ -49,48 +42,12 @@
 .line-number {
   text-align: start;
   margin-left: 1em;
-}
-
-.field {
-  font-family: Consolas, Courier, monospace;
-  text-align: center;
-  color: white;
   font-size: 1.5em;
-
-  display: inline-block;
-  width: 25em;
-  height: 2.5em;
-
-  background: none;
-  border: 0;
-  border-radius: 5px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
-
-.key-word {
-  color: #569cd6;
-}
-
-.big {
-  height: 15.625em;
-  text-align: start;
-  padding: 1em;
-  width: 23em;
-}
-
-label {
-  font-family: 'Major Mono Display', monospace;
-  margin-inline: 1rem;
-  display: inline-block;
+  color: #808080;
 }
 
 .info {
   font-size: 2em !important;
-}
-
-.text {
-  font-size: 1.5em;
-  color: #808080;
 }
 
 .confirmation {
@@ -101,6 +58,7 @@ label {
 }
 
 .comment {
+  font-size: 1.5em;
   display: block;
   margin-bottom: 1em;
   padding-top: 1em;

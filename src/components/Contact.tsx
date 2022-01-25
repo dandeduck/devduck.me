@@ -1,6 +1,7 @@
 import { FormEvent, useState } from 'react';
 import duck from './duck.svg';
 import ContactRequest from './ContactRequest';
+import ContactField from './ContactField';
 import './Contact.css';
 
 export default function Contact(props: {handleContactRequest:  (contact : ContactRequest) => Promise<boolean>}) {
@@ -44,30 +45,18 @@ export default function Contact(props: {handleContactRequest:  (contact : Contac
       <div className='contact-container'>
         <form className='contact-form' onSubmit={handleSubmit}>
           <div className='entries'>
-          <span className='text comment'>//send me a message</span>
+          <span className='comment'>//send me a message</span>
             <div className='line'>
-              <p className='line-number text'>29</p>
-              <div className='entry'>
-                <label htmlFor='name'><code className='text'> &#60;<span className='key-word'>name</span>&#62;</code></label>
-                <input id='name' className='field' onChange={e => setContact({...contact, name: e.target.value})} value={contact.name}></input>
-                <label htmlFor='name'><code className='text'>&#60;/<span className='key-word'>name</span>&#62;</code></label>
-              </div>
+              <p className='line-number code-look'>29</p>
+              <ContactField name='name' value={contact.name} onChange={(e) => setContact({...contact, name: e.target.value})} textarea={false}/>
             </div>
             <div className='line'> 
-              <p className='line-number text'>30</p>
-              <div className='entry'>
-                <label htmlFor='email'><code className='text'>&#60;<span className='key-word'>email</span>&#62;</code></label>
-                <input id='email' className='field' required onChange={e => setContact({...contact, email: e.target.value})} value={contact.email}></input>
-                <label htmlFor='email'><code className='text'>&#60;/<span className='key-word'>email</span>&#62;</code></label>
-              </div>
+              <p className='line-number code-look'>30</p>
+              <ContactField name='email' value={contact.email} onChange={(e) => setContact({...contact, email: e.target.value})} textarea={false}/>
             </div>
             <div className='line'> 
-              <p className='line-number text'>31</p>
-              <div className='entry'>
-                <label htmlFor='message'><code className='text'>&#60;<span className='key-word'>message</span>&#62;</code></label>
-                <textarea id='message' className='big field' required onChange={e => setContact({...contact, message: e.target.value})} value={contact.message}></textarea>
-                <label htmlFor='message'><code className='text'>&#60;/<span className='key-word'>message</span>&#62;</code></label>
-              </div>
+              <p className='line-number code-look'>31</p>
+              <ContactField name='message' value={contact.message} onChange={(e) => setContact({...contact, message: e.target.value})} textarea={true}/>
             </div>
           </div>
           <button type='submit' className='submit'>
