@@ -7,7 +7,7 @@
   justify-content: center;
   align-items: center;
   width: 100vw;
-  font-family: Consolas;
+  font-family: Consolas, Courier, monospace;
 }
 
 .heading {
@@ -17,6 +17,7 @@
   margin: 0;
   margin-bottom: 2em;
 }
+
 .contact-form {
   margin-right: 10em;
 }
@@ -51,7 +52,7 @@
 }
 
 .field {
-  font-family: Consolas;
+  font-family: Consolas, Courier, monospace;
   text-align: center;
   color: white;
   font-size: 1.5em;
@@ -64,6 +65,14 @@
   border: 0;
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.sent {
+  width: fit-content;
+  height: fit-content;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
 }
 
 .key-word {
@@ -104,7 +113,7 @@ label {
   display: block;
 }
 
-.speach {
+.speech {
   position: relative;
   width: 18em;
   display: flex;
@@ -112,6 +121,7 @@ label {
 }
 
 .second-heading {
+  text-align: start;
   position: absolute;
   top: 50%;
   left: 3em;

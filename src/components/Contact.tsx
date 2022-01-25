@@ -21,7 +21,7 @@ export default function Header() {
               <p className='line-number text'>30</p>
               <div className='entry'>
                 <label htmlFor='email'><code className='text'>&#60;<span className='key-word'>email</span>&#62;</code></label>
-                <input id='email' className='field'></input>
+                <input id='email' className='field' required></input>
                 <label htmlFor='email'><code className='text'>&#60;/<span className='key-word'>email</span>&#62;</code></label>
               </div>
             </div>
@@ -29,7 +29,7 @@ export default function Header() {
               <p className='line-number text'>31</p>
               <div className='entry'>
                 <label htmlFor='message'><code className='text'>&#60;<span className='key-word'>message</span>&#62;</code></label>
-                <textarea id='message' className='big field'></textarea>
+                <textarea id='message' className='big field' required></textarea>
                 <label htmlFor='message'><code className='text'>&#60;/<span className='key-word'>message</span>&#62;</code></label>
               </div>
             </div>
@@ -37,7 +37,7 @@ export default function Header() {
           <button type='submit' className='submit'>push</button>
         </form>
         <div className='info text'>
-          <div className='speach'>
+          <div className='speech'>
             <img src={duck} className='neonDuck talking-duck' alt="duck"/>
             <span className='block second-heading'>"You can also reach me at"</span>
           </div>
