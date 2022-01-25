@@ -1,4 +1,4 @@
-import Post from '../post/Post';
+import Post from './Post';
 import './Feed.css';
 
 export default function Daily() {
