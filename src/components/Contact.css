@@ -1,6 +1,19 @@
 .contact {
   text-align: center;
-  margin-inline: auto;
+}
+
+.contact-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+}
+
+.contact-form {
+  margin-right: 5em;
+  padding-right: 5em;
+  border: 1px;
+  border-color: darkgrey;
 }
 
 .heading {
@@ -8,19 +21,27 @@
   font-size: 3rem;
   letter-spacing: 0.5em;
   margin: 0;
+  margin-bottom: 2em;
+}
+
+.third-heading {
+  display: block;
+  margin-bottom: 1em;
 }
 
 .inputs {
-  margin-top: 5em;
   width: fit-content;
   margin-inline: auto;
 }
 
 .entry {
-  margin-top: 3rem;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.entry + .entry {
+  margin-top: 3em;
 }
 
 .field {
@@ -51,20 +72,71 @@ label {
   display: inline-block;
 }
 
+.info {
+  font-size: 2em !important;
+}
+
 .text {
   font-family: "Monaco";
   font-size: 1.5em;
 }
 
-.small {
-  font-size: 1rem;
+.block {
   display: block;
 }
 
-.second-heading {
-  display: block;
+.speach {
+  position: relative;
+  width: 18em;
+  display: flex;
   margin-bottom: 0.3em;
-  margin-top: 3em;
+}
+
+.second-heading {
+  position: absolute;
+  top: 50%;
+  left: 3em;
+  
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  opacity: 0;
+
+  font-style: italic;
+  color: #fff01f;
+
+  animation: 2s steps(100, end) 0.5s 1 type forwards;
+}
+
+.talking-duck {
+  display: inline-block;
+  width: 3em;
+  animation: 0.5s linear 0s 1 rotate forwards;
+}
+
+@keyframes rotate {
+  0% {
+    transform: scaleX(-1);
+  }
+  100% {
+    transform: scaleX(-1) rotate(-25deg);
+  }
+}
+
+@keyframes type {
+  0% {
+    width: 0;
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0.8;
+    width: 15.6em;
+  }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange; }
 }
 
 .submit {
@@ -84,11 +156,10 @@ label {
   .big {
     height: 100px;
   }
-  
-  .info {
-    position: absolute;
-    top: 250px;
-    left: 50px;
+
+  .contact-form {
+    margin-right: 0;
+    padding-right: 0;;
   }
 }
 
