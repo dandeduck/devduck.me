@@ -1,20 +1,24 @@
 import { FormEvent, useState } from 'react';
 import duck from './duck.svg';
+import ContactRequest from './ContactRequest';
 import './Contact.css';
 
-export default function Header() {
+export default function Contact(props: {handleContactRequest:(contact : ContactRequest) => void}) {
   const [contact, setContact] = useState({
     name: "",
     email: "",
     message: ""
   });
 
-  const [sent, setSent] = useState("");
-
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSent("sent");
-    // const name = e.target.0.value;
+    props.handleContactRequest(contact);
+
+    setContact({
+      name: "",
+      email: "",
+      message: ""
+    });
   }
   
   return (
@@ -28,7 +32,7 @@ export default function Header() {
               <p className='line-number text'>29</p>
               <div className='entry'>
                 <label htmlFor='name'><code className='text'> &#60;<span className='key-word'>name</span>&#62;</code></label>
-                <input id='name' className={`field ${sent}`} onChange={e => setContact({...contact, name: e.target.value})}></input>
+                <input id='name' className='field' onChange={e => setContact({...contact, name: e.target.value})} value={contact.name}></input>
                 <label htmlFor='name'><code className='text'>&#60;/<span className='key-word'>name</span>&#62;</code></label>
               </div>
             </div>
@@ -36,7 +40,7 @@ export default function Header() {
               <p className='line-number text'>30</p>
               <div className='entry'>
                 <label htmlFor='email'><code className='text'>&#60;<span className='key-word'>email</span>&#62;</code></label>
-                <input id='email' className={`field ${sent}`} required onChange={e => setContact({...contact, name: e.target.value})}></input>
+                <input id='email' className='field' required onChange={e => setContact({...contact, email: e.target.value})} value={contact.email}></input>
                 <label htmlFor='email'><code className='text'>&#60;/<span className='key-word'>email</span>&#62;</code></label>
               </div>
             </div>
@@ -44,7 +48,7 @@ export default function Header() {
               <p className='line-number text'>31</p>
               <div className='entry'>
                 <label htmlFor='message'><code className='text'>&#60;<span className='key-word'>message</span>&#62;</code></label>
-                <textarea id='message' className={`big field ${sent}`} required onChange={e => setContact({...contact, name: e.target.value})}></textarea>
+                <textarea id='message' className='big field' required onChange={e => setContact({...contact, message: e.target.value})} value={contact.message}></textarea>
                 <label htmlFor='message'><code className='text'>&#60;/<span className='key-word'>message</span>&#62;</code></label>
               </div>
             </div>
