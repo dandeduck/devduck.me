@@ -3,22 +3,39 @@ import duck from './duck.svg';
 import ContactRequest from './ContactRequest';
 import './Contact.css';
 
-export default function Contact(props: {handleContactRequest:(contact : ContactRequest) => void}) {
+export default function Contact(props: {handleContactRequest:  (contact : ContactRequest) => Promise<boolean>}) {
+  const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
   const [contact, setContact] = useState({
     name: "",
     email: "",
     message: ""
   });
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    props.handleContactRequest(contact);
+  const SendConfirmation = () => {
+    if (sent)
+      return <span className='text confirmation'>sent!</span>
+    return <span></span>;
+  };
 
-    setContact({
-      name: "",
-      email: "",
-      message: ""
-    });
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setSending(true);
+
+    let wasSent = await props.handleContactRequest(contact);
+
+    console.log(wasSent);
+    setSent(wasSent);
+
+    if (wasSent) {
+      setContact({
+        name: "",
+        email: "",
+        message: ""
+      });
+    }
+
+    setSending(false);
   }
   
   return (
@@ -53,7 +70,10 @@ export default function Contact(props: {handleContactRequest:(contact : ContactR
               </div>
             </div>
           </div>
-          <button type='submit' className='submit'>push</button>
+          <button type='submit' className='submit'>
+            push
+            <SendConfirmation/>
+          </button>
         </form>
         <div className='info text'>
           <div className='speech'>

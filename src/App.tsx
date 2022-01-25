@@ -12,7 +12,7 @@ export default function App() {
         <Navbar/>
         <div className='container'>
           <Routes>
-            <Route path="/contact" element={<Contact handleContactRequest={() => {}} />}/>
+            <Route path="/contact" element={<Contact handleContactRequest={() => {return Promise.resolve(true)}} />}/>
             <Route path="/" element={<Feed />}/>
           </Routes>
         </div>
