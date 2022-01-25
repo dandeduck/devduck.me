@@ -55,10 +55,15 @@ label {
   font-size: 1.5rem;
 }
 
-.hidden {
-  opacity: 1;
+.small {
+  font-size: 1rem;
+  display: block;
+}
 
-  transition: opacity 250ms linear;
+.second-heading {
+  display: block;
+  margin-bottom: 0.3rem;
+  margin-top: 3rem;
 }
 
 .submit {

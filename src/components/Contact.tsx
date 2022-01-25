@@ -22,6 +22,10 @@ export default function Header() {
         </div>
         <button type='submit' className='submit'>send</button>
       </div>
+      <span className='small text second-heading'>You can also reach me at:</span>
+      <a href='https://github.com/dandeduck' className='small text'>github.com/dandeduck</a>
+      <span className='small text'>danielmkhlv@gmail.com</span>
+      <span className='small text'>+972 587976897</span>
     </div>
   );
 }
