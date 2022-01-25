@@ -24,13 +24,6 @@
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-.big {
-  height: 15.625em;
-  text-align: start;
-  padding: 1em;
-  width: 23em;
-}
-
 .grey {
   color: #808080;
 }

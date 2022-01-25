@@ -1,6 +1,6 @@
 import './CodeInputField.css'
 
-export default function CodeInputField(props: {name: string, value: string, onChange: (e: any) => void, textarea: boolean}) {
+export default function CodeInputField(props: {name: string, value: string, onChange: (e: any) => void}) {
   return (
     <div className='entry'>
       <label  className='key-word code-look'>{props.name}</label>

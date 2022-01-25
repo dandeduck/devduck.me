@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import duck from './duck.svg';
+import duck from '../assets/duck.svg';
 import './Navbar.css';
 
 export default function Navbar() {

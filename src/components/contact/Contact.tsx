@@ -1,7 +1,8 @@
 import { FormEvent, useState } from 'react';
-import duck from './duck.svg';
+import duck from '../assets/duck.svg';
 import ContactRequest from './ContactRequest';
-import CodeInputField from './CodeInputField';
+import CodeInputField from '../codeInputField/CodeInputField';
+import CodeTextareaField from '../codeTextareaField/CodeTextareaField';
 import './Contact.css';
 
 export default function Contact(props: {handleContactRequest:  (contact : ContactRequest) => Promise<boolean>}) {
@@ -48,15 +49,15 @@ export default function Contact(props: {handleContactRequest:  (contact : Contac
           <span className='comment'>//send me a message</span>
             <div className='line'>
               <p className='line-number code-look'>29</p>
-              <CodeInputField name='name' value={contact.name} onChange={(e) => setContact({...contact, name: e.target.value})} textarea={false}/>
+              <CodeInputField name='name' value={contact.name} onChange={(e) => setContact({...contact, name: e.target.value})}/>
             </div>
             <div className='line'> 
               <p className='line-number code-look'>30</p>
-              <CodeInputField name='email' value={contact.email} onChange={(e) => setContact({...contact, email: e.target.value})} textarea={false}/>
+              <CodeInputField name='email' value={contact.email} onChange={(e) => setContact({...contact, email: e.target.value})}/>
             </div>
             <div className='line'> 
               <p className='line-number code-look'>31</p>
-              <CodeInputField name='message' value={contact.message} onChange={(e) => setContact({...contact, message: e.target.value})} textarea={true}/>
+              <CodeTextareaField name='message' value={contact.message} onChange={(e) => setContact({...contact, message: e.target.value})}/>
             </div>
           </div>
           <button type='submit' className='submit'>

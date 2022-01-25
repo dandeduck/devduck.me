@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Feed from './components/Feed';
-import Contact from './components/Contact';
+import Navbar from './components/navbar/Navbar';
+import Feed from './components/feed/Feed';
+import Contact from './components/contact/Contact';
 import './App.css';
 
 export default function App() {
