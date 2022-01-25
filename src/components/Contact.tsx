@@ -10,15 +10,15 @@ export default function Header() {
           <div className='entries'>
           <span className='text comment'>//send me a message</span>
             <div className='line'>
-              <p className='line-number'>29</p>
+              <p className='line-number text'>29</p>
               <div className='entry'>
-                <label htmlFor='name'><code className='text'>&#60;<span className='key-word'>name</span>&#62;</code></label>
+                <label htmlFor='name'><code className='text'> &#60;<span className='key-word'>name</span>&#62;</code></label>
                 <input id='name' className='field'></input>
                 <label htmlFor='name'><code className='text'>&#60;/<span className='key-word'>name</span>&#62;</code></label>
               </div>
             </div>
             <div className='line'> 
-              <p className='line-number'>30</p>
+              <p className='line-number text'>30</p>
               <div className='entry'>
                 <label htmlFor='email'><code className='text'>&#60;<span className='key-word'>email</span>&#62;</code></label>
                 <input id='email' className='field'></input>
@@ -26,7 +26,7 @@ export default function Header() {
               </div>
             </div>
             <div className='line'> 
-              <p className='line-number'>31</p>
+              <p className='line-number text'>31</p>
               <div className='entry'>
                 <label htmlFor='message'><code className='text'>&#60;<span className='key-word'>message</span>&#62;</code></label>
                 <textarea id='message' className='big field'></textarea>
