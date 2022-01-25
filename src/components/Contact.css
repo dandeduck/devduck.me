@@ -7,13 +7,7 @@
   justify-content: center;
   align-items: center;
   width: 100vw;
-}
-
-.contact-form {
-  margin-right: 5em;
-  padding-right: 5em;
-  border: 1px;
-  border-color: darkgrey;
+  font-family: Consolas;
 }
 
 .heading {
@@ -23,41 +17,66 @@
   margin: 0;
   margin-bottom: 2em;
 }
-
-.third-heading {
-  display: block;
-  margin-bottom: 1em;
+.contact-form {
+  margin-right: 10em;
 }
 
-.inputs {
+.comment {
+  display: block;
+  margin-bottom: 1em;
+  padding-top: 1em;
+  color: #009900;
+  font-weight: lighter;
+}
+
+.entries {
   width: fit-content;
-  margin-inline: auto;
+  border-radius: 10px;
+  background: var(--bg-secondary);
+  padding-bottom: 2em;
+}
+
+.line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .entry {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.entry + .entry {
+.line + .line {
   margin-top: 3em;
 }
 
+.line-number {
+  text-align: start;
+  margin-left: 1em;
+  font-size: 1.5em;
+}
+
 .field {
+  font-family: Consolas;
   text-align: center;
   color: white;
-  font-family: "Monaco";
   font-size: 1.5em;
 
   display: inline-block;
   width: 25em;
   height: 2.5em;
 
-  background: #090b0f;
+  background: none;
   border: 0;
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.key-word {
+  color: #569cd6;
 }
 
 .big {
@@ -77,7 +96,6 @@ label {
 }
 
 .text {
-  font-family: "Monaco";
   font-size: 1.5em;
 }
 
@@ -145,6 +163,7 @@ label {
   font-size: 2em;
   border-radius: 5px;
   border: 0;
+  align-self: center;
   box-shadow: rgba(240, 46, 170, 0.4) 0px 5px, rgba(240, 46, 170, 0.3) 0px 10px, rgba(240, 46, 170, 0.2) 0px 15px, rgba(240, 46, 170, 0.1) 0px 20px, rgba(240, 46, 170, 0.05) 0px 25px;
 }
 
@@ -157,9 +176,12 @@ label {
     height: 100px;
   }
 
+  .heading {
+    margin-bottom: 1em;
+  }
+
   .contact-form {
-    margin-right: 0;
-    padding-right: 0;;
+    margin-right: 5em;
   }
 }
 
