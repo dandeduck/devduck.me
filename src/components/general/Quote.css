@@ -1,0 +1,29 @@
+.quote-container {
+  position: relative;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
+.quote {
+  font-size: 3rem;
+  quotes: "\201C""\201D";
+}
+
+blockquote:before {
+  color: #ccc;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+
+.source {
+  display: block;
+  width: 100%;
+
+  font-size: 1rem;
+  font-style: italic;
+  text-align: end;
+  opacity: 0.8;
+}
