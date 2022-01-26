@@ -2,6 +2,7 @@ import { FormEvent, useState } from 'react';
 import CodeInputField from './CodeInputField';
 import ContactRequest from './ContactRequest';
 import Comment from '../general/Comment';
+import IphoneSpinner from '../general/IphoneSpinner';
 import './ContactForm.css';
 
 export default function ContactForm(props: {handleContactRequest:  (contact : ContactRequest) => Promise<boolean>}) {
@@ -15,9 +16,15 @@ export default function ContactForm(props: {handleContactRequest:  (contact : Co
 
   const SendConfirmation = () => {
     if (sent)
-      return <span className='text confirmation'>sent!</span>
+      return <span className='text confirmation'>sent!</span>;
     return <span></span>;
   };
+
+  const Sending = () => {
+    if (sending)
+      return <div className='sending'><IphoneSpinner/></div>;
+    return <div></div>;
+  }
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -58,7 +65,8 @@ export default function ContactForm(props: {handleContactRequest:  (contact : Co
       </div>
       <button type='submit' className='submit'>
         push
-        <SendConfirmation/>
+        <SendConfirmation></SendConfirmation>
+        <Sending/>
       </button>
     </form>
   );

@@ -40,3 +40,10 @@
   font-size: 1em;
   left: 8rem;
 }
+
+.sending {
+  position: absolute;
+  transform: scale(0.5);
+  top: -1em;
+  left: 5em; 
+}
