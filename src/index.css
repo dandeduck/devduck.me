@@ -1,5 +1,7 @@
 body {
   scroll-snap-type: y mandatory;
+  overflow: scroll;
+
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',

@@ -1,3 +1,31 @@
-.name {
-    
+.table {
+  width: fit-content;
+  text-align: start;
+}
+
+.title {
+  text-align: start;
+}
+
+.sections {
+  display: flex;
+  flex-direction: column;
+
+  border-radius: 5px;
+}
+
+.section {
+  width: fit-content;
+  color: white;
+  text-decoration: none;
+
+  transition: color 100ms linear;
+}
+
+.section:hover {
+  color: var(--accent-color);
+}
+
+.section + .section {
+  margin-top: 1rem;
 }

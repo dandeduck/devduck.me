@@ -1,2 +1,13 @@
 .work {
+  width: 100vw;
+}
+
+.table {
+  margin-inline: auto;
+  margin-top: 7rem;
+}
+
+.title::after {
+  content: '?';
+  color: var(--accent-color);
 }
