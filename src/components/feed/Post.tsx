@@ -1,4 +1,5 @@
 import ReactMarkdown from 'react-markdown';
+import { Link } from 'react-router-dom';
 import gfm from 'remark-gfm';
 import './Post.css';
 
@@ -6,7 +7,7 @@ export default function Post(props : {markdown: string; project: string; date: D
   return (
     <div className='Post'>
       <code className='date'>{PassedTimeString(props.now, props.date)}</code>
-      <a className='project' href={props.project}><code>{props.project}</code></a>
+      <Link to={props.project} className='project'><code>{props.project}</code></Link>
       <span className='markdown'><ReactMarkdown  remarkPlugins={[gfm]}>{props.markdown}</ReactMarkdown></span>
     </div>
   );

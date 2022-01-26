@@ -1,0 +1,49 @@
+.speech {
+  position: relative;
+  width: 18em;
+  display: flex;
+  margin-bottom: 0.3em;
+}
+
+.sentence {
+  text-align: start;
+  position: absolute;
+  top: 50%;
+  left: 3em;
+  
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  opacity: 0;
+
+  font-style: italic;
+  color: #fff01f;
+
+  animation: 2s steps(100, end) 0.5s 1 type forwards;
+}
+
+.talking-duck {
+  display: inline-block;
+  width: 3em;
+  animation: 0.5s linear 0s 1 rotate forwards;
+}
+
+@keyframes rotate {
+  0% {
+    transform: scaleX(-1);
+  }
+  100% {
+    transform: scaleX(-1) rotate(-25deg);
+  }
+}
+
+@keyframes type {
+  0% {
+    width: 0;
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0.8;
+    width: 15.6em;
+  }
+}

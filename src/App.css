@@ -3,12 +3,16 @@
   height: fit-content;
   color: white;
 
-  display: block;
   margin-inline: auto;
 }
 
 .container {
-  display: block;
   width: fit-content;
   margin-inline: auto;
+}
+
+:root {
+  --accent-color: rgba(240, 46, 170);
+  --bg-primary: #0D1117;
+  --bg-secondary: #161b22;
 }

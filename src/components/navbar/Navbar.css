@@ -50,7 +50,7 @@
   margin-bottom: 1rem;
   transform: scale(0);
   height: 2px;
-  background-color: rgba(240, 46, 170); 
+  background-color: var(--accent-color); 
   border-radius: 1px;
 
   will-change: transform;

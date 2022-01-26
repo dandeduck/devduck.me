@@ -23,7 +23,7 @@ img {
 }
 
 a {
-  color: rgba(240, 46, 170);
+  color: var(--accent-color);
 }
 
 .project {

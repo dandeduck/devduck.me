@@ -1,0 +1,42 @@
+.contact {
+  text-align: center;
+}
+
+.contact-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  font-family: Consolas, Courier, monospace;
+}
+
+.heading {
+  font-family: 'Major Mono Display', monospace;
+  font-size: 3rem;
+  letter-spacing: 0.5em;
+  margin: 0;
+  margin-bottom: 2em;
+}
+
+.contact-form {
+  margin-right: 10em;
+}
+
+@media only screen and (max-height: 1000px) {
+  .contact {
+    font-size: 12px;
+  }
+  
+  .big {
+    height: 100px;
+  }
+
+  .heading {
+    margin-bottom: 1em;
+  }
+
+  .contact-form {
+    margin-right: 5em;
+  }
+}
+
