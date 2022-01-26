@@ -1,7 +1,7 @@
 import './CodeInputField.css'
 
-export default function CodeInputField(props: {name: string, value: string, onChange: (e: any) => void, input: boolean }) {
-  const field = props.input ? <input className='field code-look' onChange={props.onChange} value={props.value}></input> : <textarea className='big field code-look' onChange={props.onChange} value={props.value}></textarea>;
+export default function CodeInputField(props: {name: string, value: string, type: string, onChange: (e: any) => void, textarea: boolean }) {
+  const field = !props.textarea ? <input className='field code-look' type={props.type} onChange={props.onChange} value={props.value}></input> : <textarea className='big field code-look' onChange={props.onChange} value={props.value}></textarea>;
   
   return (
     <div className='entry'>
@@ -13,5 +13,6 @@ export default function CodeInputField(props: {name: string, value: string, onCh
 }
 
 CodeInputField.defaultProps = {
-  input: true
+  textarea: false,
+  type: ''
 }

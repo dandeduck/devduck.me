@@ -56,11 +56,11 @@ export default function ContactForm(props: {handleContactRequest:  (contact : Co
         </div>
         <div className='line'> 
           <p className='line-number code-look'>30</p>
-          <CodeInputField name='email' value={contact.email} onChange={(e) => setContact({...contact, email: e.target.value})}/>
+          <CodeInputField name='email' value={contact.email} type='email' onChange={(e) => setContact({...contact, email: e.target.value})}/>
         </div>
         <div className='line'> 
           <p className='line-number code-look'>31</p>
-          <CodeInputField name='message' value={contact.message} onChange={(e) => setContact({...contact, message: e.target.value})} input={false}/>
+          <CodeInputField name='message' value={contact.message} onChange={(e) => setContact({...contact, message: e.target.value})} textarea={true}/>
         </div>
       </div>
       <button type='submit' className='submit'>
