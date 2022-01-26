@@ -3,8 +3,8 @@
   text-align: start;
 }
 
-.title {
-  text-align: start;
+.table-title {
+  font-weight: bolder;
 }
 
 .sections {
@@ -14,7 +14,7 @@
 
 .section {
   width: fit-content;
-  color: white;
+  color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
   
   transition: all 100ms linear;
@@ -33,7 +33,7 @@
   width: auto;
   scale: 1;
 
-  animation: blink 1000ms infinite;
+  animation: blink .75s step-end infinite;
 }
 
 @keyframes blink {

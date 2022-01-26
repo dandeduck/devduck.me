@@ -7,7 +7,7 @@
   margin-top: 7rem;
 }
 
-.title::after {
+.table-title::after {
   content: '?';
   color: var(--accent-color);
 }
