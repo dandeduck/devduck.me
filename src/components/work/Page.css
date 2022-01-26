@@ -6,3 +6,9 @@
 .content {
     padding-top: 7.1875rem;
 }
+
+.arrow {
+    transform: scale(0.05);
+    filter: invert();
+    opacity: 1;
+}
