@@ -1,0 +1,8 @@
+.page {
+    height: 100vh;
+    scroll-snap-align: start;
+}
+
+.content {
+    padding-top: 7.1875rem;
+}
