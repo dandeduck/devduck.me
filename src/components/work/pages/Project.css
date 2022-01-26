@@ -1,0 +1,47 @@
+.project-link {
+  color: white;
+  text-decoration: none;
+}
+
+.project-block {
+  position: relative;
+  background-color: var(--bg-secondary);
+  border-radius: 5px;
+  padding: 1rem;
+  width: 15rem;
+
+  text-align: start;
+  font-family: 'Monaco';
+  transition: all .3s ease-in-out;
+}
+
+.project-block:hover {
+  box-shadow: rgba(240, 46, 170) 0px 7px 20px;
+  transform: translate3d(0px, -1px, 0px);
+}
+
+.project-name {
+  font-weight: bolder;
+  margin-block: 0.5rem;
+}
+
+.project-icon {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+
+  width: 20px;
+  filter: invert();
+}
+
+.project-description {
+  opacity: 0.8;
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.project-technology {
+  opacity: 0.6;
+  font-size: 0.8rem;
+  margin-right: 1rem;
+}

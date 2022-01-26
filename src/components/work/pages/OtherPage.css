@@ -1,0 +1,20 @@
+#other {
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.other-heading {
+  font-family: 'Monaco';
+  margin-bottom: 5rem;
+}
+
+.projects {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  width: 72rem;
+}
