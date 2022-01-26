@@ -10,6 +10,8 @@
     rgba(240, 46, 170, 0.1) -20px 20px, 
     rgba(240, 46, 170, 0.05) -25px 25px;
 
+  will-change: box-shadow;
+
   margin-bottom: 6rem;
 }
 
