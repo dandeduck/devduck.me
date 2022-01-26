@@ -1,7 +1,7 @@
 import { FormEvent, useState } from 'react';
 import CodeInputField from './CodeInputField';
 import ContactRequest from './ContactRequest';
-import Comment from './Comment';
+import Comment from '../general/Comment';
 import './ContactForm.css';
 
 export default function ContactForm(props: {handleContactRequest:  (contact : ContactRequest) => Promise<boolean>}) {
