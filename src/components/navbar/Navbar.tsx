@@ -11,7 +11,7 @@ export default function Navbar() {
         </div>
         <Link to={'/'} className='navbar-link underline'>about me</Link>
         <Link to={'/'} className='navbar-link underline'>daily</Link>
-        <Link to={'/'} className='navbar-link underline'>my work</Link>
+        <Link to={'/work'} className='navbar-link underline'>my work</Link>
         <Link to={'/contact'} className='navbar-link underline'>contact</Link>
       </nav>
     </div>
