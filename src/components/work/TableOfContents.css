@@ -16,12 +16,38 @@
   width: fit-content;
   color: white;
   text-decoration: none;
+  
+  transition: all 100ms linear;
+}
 
-  transition: color 100ms linear;
+.section::before {
+  display: inline-block;
+  content: '_';
+  color: white;
+  width: 0;
+  scale: 0;
+}
+
+.section:hover::before {
+  color: white;
+  width: auto;
+  scale: 1;
+
+  animation: blink 1000ms infinite;
+}
+
+@keyframes blink {
+  from, to {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
 }
 
 .section:hover {
   color: var(--accent-color);
+  /* padding-left: 2rem; */
 }
 
 .section + .section {

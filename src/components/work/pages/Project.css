@@ -1,14 +1,17 @@
 .project-link {
+  display: block;
   color: white;
   text-decoration: none;
+  background-color: var(--bg-secondary);
+  border-radius: 5px;
 }
 
 .project-block {
-  position: relative;
-  background-color: var(--bg-secondary);
-  border-radius: 5px;
   padding: 1rem;
-  width: 15rem;
+  height: 13rem;
+  width: 17rem;
+  position: relative;
+  border-radius: 5px;
 
   text-align: start;
   font-family: 'Monaco';
@@ -23,6 +26,7 @@
 .project-name {
   font-weight: bolder;
   margin-block: 0.5rem;
+  margin-top: 2rem;
 }
 
 .project-icon {
@@ -44,4 +48,9 @@
   opacity: 0.6;
   font-size: 0.8rem;
   margin-right: 1rem;
+}
+
+.project-technologies {
+  bottom: 1rem;
+  position: absolute;
 }
