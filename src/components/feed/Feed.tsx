@@ -10,7 +10,7 @@ export default function Daily() {
   # Welcome the Destroyer!
   our second ship
 
-  ![Destroyer](https://res.cloudinary.com/dandeduck/image/upload/v1642857955/cld-sample.jpg)
+  ![Destroyer](https://i.pinimg.com/originals/85/00/3b/85003b8e414d2708f18fcb0fd1ccecf0.png)
   ## Second heading
   some more
   \`\`\`
