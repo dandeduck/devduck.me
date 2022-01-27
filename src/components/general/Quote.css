@@ -12,7 +12,7 @@
 }
 
 blockquote:before {
-  color: #ccc;
+  color: var(--accent-orange);
   content: open-quote;
   font-size: 4em;
   line-height: 0.1em;

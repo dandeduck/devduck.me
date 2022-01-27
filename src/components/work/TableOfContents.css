@@ -51,7 +51,7 @@
 }
 
 .section:hover {
-  color: var(--accent-color);
+  color: var(--accent-green);
   /* padding-left: 2rem; */
 }
 

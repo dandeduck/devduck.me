@@ -6,8 +6,3 @@
   margin-inline: auto;
   margin-top: 7rem;
 }
-
-.table-title::after {
-  content: '?';
-  color: var(--accent-color);
-}

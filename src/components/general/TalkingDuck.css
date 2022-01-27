@@ -17,7 +17,7 @@
   opacity: 0;
 
   font-style: italic;
-  color: #fff01f;
+  color: var(--accent-orange);
   font-size: 1em;
 
   animation: 2s steps(100, end) 1s 1 type forwards;

@@ -49,7 +49,7 @@
   content: "- \"quack!\"";
   /* content: ""; */
   font-style: italic;
-  color: #fff01f;
+  color: var(--accent-orange);
 
   display: inline-block;
   width: 5rem;
