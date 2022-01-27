@@ -47,19 +47,19 @@ export default function ContactForm(props: {handleContactRequest:  (contact : Co
   }
   
   return (
-    <form className='contact-form' onSubmit={handleSubmit}>
+    <form className='contact-form code-look' onSubmit={handleSubmit}>
       <div className='entries'>
         <Comment value={'//send me a message'}/>
         <div className='line'>
-          <p className='line-number code-look'>29</p>
+          <p className='line-number'>29</p>
           <CodeInputField name='name' value={contact.name} onChange={(e) => setContact({...contact, name: e.target.value})}/>
         </div>
         <div className='line'> 
-          <p className='line-number code-look'>30</p>
+          <p className='line-number'>30</p>
           <CodeInputField name='email' value={contact.email} type='email' onChange={(e) => setContact({...contact, email: e.target.value})}/>
         </div>
         <div className='line'> 
-          <p className='line-number code-look'>31</p>
+          <p className='line-number'>31</p>
           <CodeInputField name='message' value={contact.message} onChange={(e) => setContact({...contact, message: e.target.value})} textarea={true}/>
         </div>
       </div>

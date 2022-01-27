@@ -7,12 +7,9 @@
   justify-content: center;
   align-items: center;
   width: 100vw;
-  
-  font-family: 'Monaco';
 }
 
 .heading {
-  font-family: 'Monaco';
   font-size: 3rem;
   margin: 0;
   margin-bottom: 2em;

@@ -3,11 +3,6 @@
   align-self: center;
 }
 
-code {
-  font-family: "Monaco";
-  font-size: 0.8rem;
-}
-
 @media only screen and (max-width: 1000px) {
   .Feed {
     width: 70vw;

@@ -17,7 +17,10 @@
 
 .markdown {
   padding-inline: 1rem;
-  font-family: 'Monaco', monospace;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+  word-wrap: break-word;
+  line-height: 1.5;
+  font-size: 16px;
 }
 
 img {
@@ -25,7 +28,12 @@ img {
 }
 
 a {
-  color: var(--accent-color);
+  text-decoration: none;
+  color: #58a6ff;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 .project {

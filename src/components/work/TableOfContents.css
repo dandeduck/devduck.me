@@ -1,6 +1,7 @@
 .table {
   width: fit-content;
   text-align: start;
+  font-size: 1.5rem;
 }
 
 .table-title {
@@ -18,6 +19,10 @@
   text-decoration: none;
   
   transition: all 100ms linear;
+}
+
+.section:hover {
+  text-decoration: none;
 }
 
 .section::before {
@@ -38,10 +43,10 @@
 
 @keyframes blink {
   from, to {
-    opacity: 0;
+    opacity: 1;
   }
   50% {
-    opacity: 1;
+    opacity: 0;
   }
 }
 

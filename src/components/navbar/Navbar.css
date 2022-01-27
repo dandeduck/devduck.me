@@ -24,49 +24,30 @@
 
 .navbar-link {
   margin-block: 1rem;
-  font-family: 'Major Mono Display', monospace;
   text-decoration: none;
   position: relative;
 
   color: white;
   font-size: 1.2rem;
-
-  transition: all 250ms ease-out;
 }
 
 .navbar-link:hover {
-  letter-spacing: 0.5em;
-  padding-left: 0.5em;
+  text-decoration: none;
 }
 
-.underline::after {
-  content: "";
-
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-
-  margin-bottom: 1rem;
-  transform: scale(0);
-  height: 2px;
-  background-color: var(--accent-color); 
-  border-radius: 1px;
-
-  will-change: transform;
-
-  transition: transform 250ms ease-out;
+.navbar-link::before {
+  content: '﹡';
+  opacity: 0;
+  font-size: 1.5rem;
 }
 
-.underline:hover::after {
-  transform: scale(1);
+.navbar-link:hover::before {
+  opacity: 1;
 }
 
 .neonDuck {
-  width: 40px;
-
-  transform: scaleX(-1);
-  filter: invert(100%) drop-shadow(0 0 5px #FFF01F);
+  width: 50px;
+  
   position: relative;
 }
 
@@ -81,7 +62,7 @@
   color: #fff01f;
 
   display: inline-block;
-  width: 5em;
+  width: 5rem;
   
   position: absolute;
   top: 3rem;

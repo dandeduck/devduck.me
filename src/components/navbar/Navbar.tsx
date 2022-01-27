@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom';
-import duck from '../assets/duck.svg';
+import duck from '../assets/duck1.png';
+// import duck from '../assets/duck.svg';
 import './Navbar.css';
 
 export default function Navbar() {
   return (
-    <div className='navContainer'>
+    <div className='navContainer code-look'>
       <nav className='navbar'>
         <div className='duck'>
           <img src={duck} className='neonDuck' alt="duck"/>
