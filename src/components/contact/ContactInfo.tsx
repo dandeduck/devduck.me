@@ -1,4 +1,4 @@
-import TalkingDuck from './TalkingDuck';
+import TalkingDuck from '../general/TalkingDuck';
 import './ContactInfo.css';
 
 export default function ContactInfo() {

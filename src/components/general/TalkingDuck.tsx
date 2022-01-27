@@ -5,7 +5,7 @@ export default function ContactInfo(props: {sentence: string}) {
   return (
     <div className='speech'>
       <img src={duck} className='talking-duck' alt="duck"/>
-      <span className='block sentence'>{props.sentence}</span>
+      <span className='block sentence code-look '>{props.sentence}</span>
     </div>
   );
 }

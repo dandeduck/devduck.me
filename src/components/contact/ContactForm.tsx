@@ -63,7 +63,7 @@ export default function ContactForm(props: {handleContactRequest:  (contact : Co
           <CodeInputField name='message' value={contact.message} onChange={(e) => setContact({...contact, message: e.target.value})} textarea={true}/>
         </div>
       </div>
-      <button type='submit' className='submit'>
+      <button type='submit' className='submit code-look'>
         push
         <SendConfirmation></SendConfirmation>
         <Sending/>
