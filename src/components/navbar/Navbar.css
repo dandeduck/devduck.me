@@ -35,16 +35,6 @@
   text-decoration: none;
 }
 
-.navbar-link::before {
-  content: '﹡';
-  opacity: 0;
-  font-size: 1.5rem;
-}
-
-.navbar-link:hover::before {
-  opacity: 1;
-}
-
 .neonDuck {
   width: 50px;
   

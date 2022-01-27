@@ -3,6 +3,20 @@
   align-self: center;
 }
 
+.feed-start {
+  font-size: 1.5rem;
+}
+
+.feed-start::after {
+  content: '_';
+
+  animation: blink .75s step-end infinite;
+}
+
+.separator {
+  text-align: center;
+}
+
 @media only screen and (max-width: 1000px) {
   .Feed {
     width: 70vw;

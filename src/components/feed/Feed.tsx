@@ -24,7 +24,7 @@ export default function Daily() {
   const date = new Date(2022, 1, 24, 16);
 
   return (
-    <div className='Feed'>
+    <div className='Feed code-look'>
       <Post markdown={short} project='Tracer' date={new Date(2022, 1, 24, 10)} now={date}/>
       <Post markdown={long} project='Asteroids UNLIMITED' date={new Date(2022, 1, 24, 15, 50)} now={date}/>
     </div>
