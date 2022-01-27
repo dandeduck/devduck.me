@@ -29,6 +29,8 @@
   display: inline-block;
   content: '_';
   color: white;
+
+  opacity: 0;
   width: 0;
   scale: 0;
 }
