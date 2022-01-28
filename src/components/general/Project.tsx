@@ -1,4 +1,4 @@
-import github from '../../assets/github.svg';
+import github from '../assets/github.svg';
 import './Project.css';
 
 export default function Project(props: {name: string, link: string, description: string, technologies: string[]}) {

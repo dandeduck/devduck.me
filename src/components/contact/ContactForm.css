@@ -28,20 +28,21 @@
   
   margin-top: 2em;
   font-size: 2em;
-  text-transform: uppercase;
   border-radius: 5px;
   border: 0;
   align-self: center;
+  
 }
 
 .confirmation {
   position: absolute;
   color: white;
   font-size: 1em;
-  left: 8rem;
+  left: 13rem;
 }
 
 .sending {
+  background: red;
   position: absolute;
   transform: scale(0.5);
   top: -1em;

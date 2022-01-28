@@ -10,10 +10,11 @@
 }
 
 .arrow {
-    transform: scale(0.03);
+    width: 48px;
     filter: invert();
     opacity: 1;
 
     position: absolute;
-    top: 0;
+    bottom: 0;
+    left: 50%;
 }

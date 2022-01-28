@@ -7,7 +7,7 @@ export default function Post(props : {markdown: string; project: string; date: D
   return (
     <div className='post'>
       <code className='date'>{PassedTimeString(props.now, props.date)}...</code>
-      <code className='project'>[<Link to={props.project}>{props.project}</Link>]</code>
+      <code className='project'>[<span className='link'><Link to={props.project}>{props.project}</Link></span>]</code>
       <span className='markdown'><span className='console-start'><span className='post-user'>dandeduck@web</span>:<span className='post-dir'>~/dev</span>$</span><ReactMarkdown  remarkPlugins={[gfm]}>{props.markdown}</ReactMarkdown></span>
     </div>
   );

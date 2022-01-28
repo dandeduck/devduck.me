@@ -1,0 +1,21 @@
+.game-development {
+  width: min(60rem, 70%);
+  margin-inline: auto;
+}
+
+.game-development h1 {
+  font-size: 3rem;
+  text-transform: capitalize;
+}
+
+.game-development-text {
+  width: 35rem;
+}
+
+.game-development-projects {
+  display: flex;
+  flex-wrap: wrap;
+  width: min(60rem, 70%);
+  margin-top: 8rem;
+  gap: 1rem;
+}

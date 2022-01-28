@@ -25,3 +25,22 @@
 code {
   font-family: 'Ubuntu Mono', monospace;
 }
+
+.link {
+  color: #58a6ff;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.link:active .link:visited {
+  color: #58a6ff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+

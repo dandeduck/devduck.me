@@ -64,7 +64,7 @@ export default function ContactForm(props: {handleContactRequest:  (contact : Co
         </div>
       </div>
       <button type='submit' className='submit code-look'>
-        push
+        git push
         <SendConfirmation></SendConfirmation>
         <Sending/>
       </button>

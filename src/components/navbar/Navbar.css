@@ -31,6 +31,10 @@
   font-size: 1.5rem;
 }
 
+.navbar-link:visited {
+  background: red;
+}
+
 .navbar-link:hover {
   text-decoration: none;
 }

@@ -10,7 +10,7 @@ export default function Navbar() {
         <div className='duck'>
           <img src={duck} className='neonDuck' alt="duck"/>
         </div>
-        <Link to={'/'} className='navbar-link'>about-me.txt</Link>
+        <Link to={'/'} className='navbar-link'>about-me.md</Link>
         <Link to={'/'} className='navbar-link'>daily.sh</Link>
         <Link to={'/work'} className='navbar-link'>"my work".tar.gz</Link>
         <Link to={'/contact'} className='navbar-link'>contact.html</Link>

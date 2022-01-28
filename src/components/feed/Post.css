@@ -4,10 +4,10 @@
 
   margin-bottom: 4rem;
 
-  background-color: black;
+  background-color: var(--bg-secondary);
   padding: 1rem;
   border-radius: 10px;
-  border: solid darkgrey 1px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .markdown {
@@ -41,9 +41,13 @@
   width: 100%;
 }
 
-a {
-  text-decoration: none;
+.post p {
+  font-size: 1.1em;
+}
+
+.post a {
   color: #58a6ff;
+  text-decoration: none;
 }
 
 a:hover {
