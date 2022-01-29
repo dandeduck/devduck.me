@@ -1,5 +1,7 @@
 import Post from './Post';
 import './Feed.css';
+import { useEffect, useState } from 'react';
+
 
 export default function Daily() {
   const short : string = `
@@ -24,10 +26,27 @@ export default function Daily() {
   `;
   const date = new Date(2022, 1, 24, 16);
 
+  localStorage.getItem('feed-scrollPosition') ?? localStorage.setItem('feed-scrollPosition', '0');
+
+  useEffect(() => {
+    window.scrollTo(0, parseInt(localStorage.getItem('feed-scrollPosition') ?? '0'));
+
+    return () =>{
+      window.removeEventListener('scroll', onScroll);
+    };
+  }, []);
+
+  window.addEventListener('scroll', onScroll);
+
   return (
     <div className='Feed code-look'>
-      <Post markdown={short} project='Tracer' date={new Date(2022, 1, 24, 10)} now={date}/>
       <Post markdown={long} project='Asteroids UNLIMITED' date={new Date(2022, 1, 24, 15, 50)} now={date}/>
+      <Post markdown={short} project='Tracer' date={new Date(2022, 1, 24, 10)} now={date}/>
     </div>
   );
+}
+
+function onScroll(e: Event) {
+  if (window.location.pathname == '/' && document.documentElement.scrollTop - parseInt(localStorage.getItem('feed-scrollPosition') ?? '0') < 100)
+      localStorage.setItem('feed-scrollPosition', document.documentElement.scrollTop.toString());
 }

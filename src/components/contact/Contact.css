@@ -1,5 +1,7 @@
 .contact {
   text-align: center;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .contact-container {

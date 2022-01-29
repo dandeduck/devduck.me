@@ -6,7 +6,6 @@ import Work from './components/work/Work';
 import './App.css';
 
 export default function App() {
-
   return (
     <div className="App">
       <BrowserRouter>
@@ -15,7 +14,7 @@ export default function App() {
           <Routes>
             <Route path="/contact" element={<Contact handleContactRequest={() => {return Promise.resolve(true)}} />}/>
             <Route path="/work" element={<Work/>}/>
-            <Route path="/" element={<Feed />}/>
+            <Route path="/" element={<Feed/>}/>
           </Routes>
         </div>
       </BrowserRouter>
