@@ -1,15 +1,12 @@
 .game-development {
   width: min(60rem, 70%);
-  margin-inline: auto;
-  height: calc(100vh - 110px);
+  margin: 0 auto;
+  padding-top: 110px;
+  height: calc(100vh - 220px);
   max-height: fit-content;
-
-  display: table;
 }
 
 .game-development-centered-container {
-  display: table-cell;
-  vertical-align: middle;
 }
 
 .game-development h1 {
@@ -42,6 +39,4 @@
   flex-wrap: wrap;
   margin-top: 8rem;
   gap: 1rem;
-
-  margin-bottom: 5rem;
 }
