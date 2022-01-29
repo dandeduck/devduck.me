@@ -7,7 +7,7 @@ export default function Work() {
   localStorage.getItem('work-scrollPosition') ?? localStorage.setItem('work-scrollPosition', '0');
 
   useEffect(() => {
-    window.scrollTo(0, parseInt(localStorage.getItem('work-scrollPosition') ?? '0'));
+    document.documentElement.scrollTop = parseInt(localStorage.getItem('work-scrollPosition') ?? '0');
     
     return () =>{
       window.removeEventListener('scroll', onScroll);

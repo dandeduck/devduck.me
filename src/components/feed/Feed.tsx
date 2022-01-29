@@ -29,7 +29,7 @@ export default function Daily() {
   localStorage.getItem('feed-scrollPosition') ?? localStorage.setItem('feed-scrollPosition', '0');
 
   useEffect(() => {
-    window.scrollTo(0, parseInt(localStorage.getItem('feed-scrollPosition') ?? '0'));
+    document.documentElement.scrollTop = parseInt(localStorage.getItem('feed-scrollPosition') ?? '0');
 
     return () =>{
       window.removeEventListener('scroll', onScroll);
