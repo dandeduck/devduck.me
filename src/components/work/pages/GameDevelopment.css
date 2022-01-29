@@ -1,7 +1,6 @@
 .game-development {
   width: min(60rem, 70%);
   margin-inline: auto;
-
 }
 
 .game-development h1 {
@@ -16,7 +15,7 @@
 }
 
 .game-development-main {
-  width: fit-content;
+  width: 100%;
 }
 
 .game-development-text:first-child {
