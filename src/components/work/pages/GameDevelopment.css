@@ -1,6 +1,7 @@
 .game-development {
   width: min(60rem, 70%);
   margin-inline: auto;
+  height: calc(100vh - 110px);
 }
 
 .game-development h1 {

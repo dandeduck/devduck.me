@@ -1,5 +1,6 @@
 import TableOfContents from '../TableOfContents';
 import Quote from '../../general/Quote';
+import './WorkIntro.css';
 
 export default function WorkIntro() {
   return (

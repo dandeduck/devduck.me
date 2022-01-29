@@ -1,0 +1,10 @@
+#start {
+  height: calc(100vh - 110px);
+  width: 100%;
+  /* margin-block: 25%; */
+}
+
+.table {
+  margin-inline: auto;
+  margin-top: 7rem;
+}
