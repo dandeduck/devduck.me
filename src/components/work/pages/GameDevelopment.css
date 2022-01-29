@@ -5,6 +5,13 @@
   height: calc(100vh - 110px);
   transform: translateY(-110px);
   max-height: fit-content;
+
+  display: flex;
+}
+
+.game-development-centered-container {
+  margin: auto;
+  transform: translateY(-110px);
 }
 
 .game-development h1 {
