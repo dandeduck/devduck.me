@@ -1,6 +1,12 @@
 #start {
   height: calc(100vh - 110px);
   width: 100%;
+  display: table;
+}
+
+.work-intro-container {
+  display: table-cell;
+  vertical-align: middle;
 }
 
 .table {

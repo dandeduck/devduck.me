@@ -3,6 +3,13 @@
   margin-inline: auto;
   height: calc(100vh - 110px);
   max-height: fit-content;
+
+  display: table;
+}
+
+.game-development-centered-container {
+  display: table-cell;
+  vertical-align: middle;
 }
 
 .game-development h1 {
@@ -17,7 +24,7 @@
 }
 
 .game-development-main {
-  width: 100%;
+  width: fit-content;
 }
 
 .game-development-text:first-child {
