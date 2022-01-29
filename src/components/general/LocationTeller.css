@@ -2,7 +2,7 @@
   width: 20rem;
 }
 
-.location-teller a {
+.location-teller span {
   display: block;
 
   color: white;
@@ -24,10 +24,6 @@
 .location-teller .unselected {
   opacity: 0.8;
   transition: all linear 100ms;
-}
-
-.location-teller .unselected:hover {
-  opacity: 1;
 }
 
 @keyframes blink {
