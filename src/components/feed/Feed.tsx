@@ -47,6 +47,6 @@ export default function Daily() {
 }
 
 function onScroll(e: Event) {
-  if (window.location.pathname == '/' && document.documentElement.scrollTop - parseInt(localStorage.getItem('feed-scrollPosition') ?? '0') < 100)
+  if (window.location.pathname === '/' && document.documentElement.scrollTop - parseInt(localStorage.getItem('feed-scrollPosition') ?? '0') < 100)
       localStorage.setItem('feed-scrollPosition', document.documentElement.scrollTop.toString());
 }

@@ -25,6 +25,6 @@ export default function Work() {
 }
 
 function onScroll(e: Event) {
-  if (window.location.pathname == '/work' && document.documentElement.scrollTop - parseInt(localStorage.getItem('work-scrollPosition') ?? '0') < 100)
+  if (window.location.pathname === '/work' && document.documentElement.scrollTop - parseInt(localStorage.getItem('work-scrollPosition') ?? '0') < 100)
       localStorage.setItem('work-scrollPosition', document.documentElement.scrollTop.toString());
 }
