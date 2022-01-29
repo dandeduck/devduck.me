@@ -5,7 +5,6 @@ import './GameDevelopment.css';
 export default function GameDevelopment() {
   return (
     <div id='game development' className='game-development code-look'>
-      <div className='game-development-centered-container'>
         <h1>game development</h1>
         <div className='game-development-container'>
           <div className='game-development-main'>
@@ -21,7 +20,6 @@ export default function GameDevelopment() {
           </div>
           <LocationTeller locations={['start', 'game development', 'web development', 'robotics']} currentLocation='game development'/>
         </div>
-      </div>
     </div>
   );
 }

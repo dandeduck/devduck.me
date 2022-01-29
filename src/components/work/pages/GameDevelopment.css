@@ -2,11 +2,9 @@
   width: min(60rem, 70%);
   margin: 0 auto;
   padding-top: 110px;
-  height: calc(100vh - 220px);
+  height: calc(100vh - 110px);
+  transform: translateY(-110px);
   max-height: fit-content;
-}
-
-.game-development-centered-container {
 }
 
 .game-development h1 {
