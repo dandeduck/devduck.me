@@ -2,6 +2,7 @@
   width: min(60rem, 70%);
   margin-inline: auto;
   height: calc(100vh - 110px);
+  max-height: fit-content;
 }
 
 .game-development h1 {

@@ -14,6 +14,8 @@ export default function GameDevelopment() {
           <div className='game-development-projects'>
             <Project name='asteroids UNLIMITED' link='https://github.com/dandeduck/asteroids-unlimited' description='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lobortis dictum magna ut mattis. Nulla facilisi. Morbi ut neque orci. Suspendisse tortor metus, su' technologies={['Unity', 'AI', 'Multiplayer']} />
             <Project name='savanna' link='https://github.com/dandeduck/savanna' description='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lobortis dictum magna ut mattis. Nulla facilisi. Morbi ut neque orci. Suspendisse tortor metus, su' technologies={['Unity', 'RPG Systems']} />
+            <Project name='savanna' link='https://github.com/dandeduck/savanna' description='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lobortis dictum magna ut mattis. Nulla facilisi. Morbi ut neque orci. Suspendisse tortor metus, su' technologies={['Unity', 'RPG Systems']} />
+            <Project name='savanna' link='https://github.com/dandeduck/savanna' description='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lobortis dictum magna ut mattis. Nulla facilisi. Morbi ut neque orci. Suspendisse tortor metus, su' technologies={['Unity', 'RPG Systems']} />
           </div>
         </div>
         <LocationTeller locations={['start', 'game development', 'web development', 'robotics']} currentLocation='game development'/>
