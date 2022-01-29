@@ -8,7 +8,7 @@ export default function LocationTeller(props: {locations: string[], currentLocat
 
   return (
     <div className='location-teller'>
-      {props.locations.map(location => <a href='/' onClick={e => onClick(e, location)}>{props.currentLocation == location ? <span>_</span> : <span></span>}{location}</a>)}
+      {props.locations.map(location => <a href='/' className={props.currentLocation == location ? 'selected' : 'unselected'} onClick={e => onClick(e, location)}>{location}</a>)}
     </div>
   );
 }

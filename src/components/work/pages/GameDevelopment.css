@@ -2,6 +2,15 @@
   width: min(60rem, 70%);
   margin-inline: auto;
 
+}
+
+.game-development h1 {
+  margin-top: 0;
+  font-size: 3rem;
+  text-transform: capitalize;
+}
+
+.game-development-container {
   display: flex;
   justify-content: space-between;
 }
@@ -10,10 +19,8 @@
   width: fit-content;
 }
 
-.game-development h1 {
+.game-development-text:first-child {
   margin-top: 0;
-  font-size: 3rem;
-  text-transform: capitalize;
 }
 
 .game-development-text {
