@@ -5,6 +5,7 @@
   transform: translateY(-110px);
   
   display: flex;
+  position: relative;
 }
 
 .work-intro-container {
@@ -14,4 +15,29 @@
 .table {
   margin-inline: auto;
   margin-top: 7rem;
+}
+
+#start img {
+  width: 40px;
+  filter: invert();
+  position: absolute;
+  bottom: 3rem;
+  left: 50%;
+
+  animation: arrow-down 3s ease-in-out 0s infinite;
+}
+
+@keyframes arrow-down {
+  0% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(0);
+  }
+  87% {
+    transform: translateY(2rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }

@@ -1,6 +1,6 @@
 import Post from './Post';
 import './Feed.css';
-import { useEffect, useState } from 'react';
+import { useEffect, } from 'react';
 
 
 export default function Daily() {
