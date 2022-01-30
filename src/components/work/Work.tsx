@@ -69,16 +69,17 @@ export default function Work() {
     webglRenderer.setPixelRatio(window.devicePixelRatio);
 
     const camera = new THREE.PerspectiveCamera(50, 2, 1, 5000);
-    camera.position.set(250, 100, 100);
+    // camera.position.set(250, 100, 100);
+    camera.position.set(0, 0, 8.5);
 
     const scene = new THREE.Scene();
-    scene.add(createCSS3DObject(content));
+    // scene.add(createCSS3DObject(content));
 
     const geometry = new THREE.BoxGeometry();
     const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
     const cube = new THREE.Mesh( geometry, material );
-    cube.scale.set(50, 50, 50)
-    // scene.add( cube );
+    cube.scale.set(5, 2.5, 1)
+    scene.add( cube );
     
     function animate() {
       webglRenderer.render(scene, camera);
@@ -92,13 +93,13 @@ export default function Work() {
   return (
     <div className='work'>
       <WorkIntro/>
-      <canvas id='webgl'></canvas>
       <div className='threeContainer'>
+        <canvas id='webgl'></canvas>
         <div id='css3d'></div>
       </div>
       {/* <div className='dummy'></div> */}
       {/* <canvas id='webgl'></canvas> */}
-      {/* <GameDevelopment/> */}
+      <GameDevelopment/>
       {/* <div id='gamedev' className='dummy'></div> */}
       {/* <div className='dummy'></div> */}
     </div>
@@ -119,8 +120,8 @@ function createCSS3DObject(content: string)
   div.style.color = 'white';
   
   const object = new CSS3DObject(div);
-  // object.position.set(250, 100, 0);
-  object.scale.set(0.1, 0.1, 0.1);
+  object.position.set(-239.99, -110.1, 0);
+  object.scale.set(0.01, 0.01, 0.01);
 
   return object;
 }
