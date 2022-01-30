@@ -2,13 +2,19 @@
   width: 20rem;
 }
 
-.location-teller span {
+.location-teller a {
   display: block;
 
   color: white;
   text-decoration: none;
   font-size: 1.5rem;
   margin-bottom: 1.5rem;
+
+  transition: all 200ms;
+}
+
+.location-teller a:hover {
+  opacity: 1;
 }
 
 .location-teller .selected::before {
