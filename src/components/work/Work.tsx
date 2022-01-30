@@ -5,8 +5,8 @@ import './Work.css'
 import { useEffect } from 'react';
 import * as THREE from 'three';
 import { CSS3DRenderer, CSS3DObject } from 'three/examples/jsm/renderers/CSS3DRenderer.js';
-import { GLTF, GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { renderToStaticMarkup } from 'react-dom/server'
+import animateElement from '../general/Animation';
 
 export default function Work() {
   sessionStorage.getItem('work-scrollPosition') ?? sessionStorage.setItem('work-scrollPosition', '0');
@@ -73,12 +73,11 @@ export default function Work() {
     camera.position.set(0, 0, 8.5);
 
     const scene = new THREE.Scene();
-    // scene.add(createCSS3DObject(content));
 
     const geometry = new THREE.BoxGeometry();
-    const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
+    const material = new THREE.MeshBasicMaterial( { color: 'grey' } );
     const cube = new THREE.Mesh( geometry, material );
-    cube.scale.set(5, 2.5, 1)
+    cube.scale.set(15, 8, 1)
     scene.add( cube );
     
     function animate() {
@@ -88,6 +87,39 @@ export default function Work() {
     }
     requestAnimationFrame(animate);
 
+    gsap.to(camera.position, {
+      z: 12,
+      scrollTrigger: {
+        trigger: '.game-development',
+        start: "bottom bottom",
+        end: "bottom top",
+        scrub: true
+      }
+    });
+
+    gsap.to(camera.rotation, {
+      y: 0.5,
+      scrollTrigger: {
+        trigger: '.game-development',
+        start: "bottom center",
+        end: "bottom top",
+        scrub: true
+      }
+    });
+
+    const object = createCSS3DObject(content);
+
+    animateElement('.threeContainer', '.game-development', 
+    {
+      position: 'absolute',
+      top: '100%'
+    },
+    {
+      position: 'fixed',
+      top: 0,
+      onStart: () => {scene.add(object)},
+      onReverseComplete: () => {scene.remove(object)}
+    }, "bottom bottom", "bottom bottom");
   }, []);
 
   return (
@@ -100,8 +132,8 @@ export default function Work() {
       {/* <div className='dummy'></div> */}
       {/* <canvas id='webgl'></canvas> */}
       <GameDevelopment/>
-      {/* <div id='gamedev' className='dummy'></div> */}
-      {/* <div className='dummy'></div> */}
+      <div className='dummy'></div>
+      <div className='dummy'></div>
     </div>
   );
 }

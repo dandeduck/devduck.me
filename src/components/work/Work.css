@@ -10,15 +10,15 @@
 }
 
 #css3d {
-  width: 100%;
   overflow: hidden;
   /* background: red; */
 }
 
 #webgl {
   position: absolute;
+  /* top: 100%; */
 }
 
 .dummy {
-  height: 92vh;
+  height: 100vh;
 }
