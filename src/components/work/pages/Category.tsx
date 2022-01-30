@@ -30,6 +30,20 @@ export default function Category(props: {title: string, text: JSX.Element, proje
       opacity: 1,
       x: 0
     });
+    animateElement('.game-development', ".game-development",
+    {
+      position: 'static',
+    },
+    {
+      position: 'fixed',
+    }, "top top");
+    animateElement('.game-development', ".game-development",
+    {
+      scale: 1
+    },
+    {
+      scale: 0.65
+    }, "bottom 86.5%", "bottom top");
   }, []);
   
   return (

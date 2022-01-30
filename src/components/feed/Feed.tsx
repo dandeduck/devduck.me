@@ -26,10 +26,10 @@ export default function Daily() {
   `;
   const date = new Date(2022, 1, 24, 16);
 
-  localStorage.getItem('feed-scrollPosition') ?? localStorage.setItem('feed-scrollPosition', '0');
+  sessionStorage.getItem('feed-scrollPosition') ?? sessionStorage.setItem('feed-scrollPosition', '0');
 
   useEffect(() => {
-    document.documentElement.scrollTop = parseInt(localStorage.getItem('feed-scrollPosition') ?? '0');
+    document.documentElement.scrollTop = parseInt(sessionStorage.getItem('feed-scrollPosition') ?? '0');
 
     return () =>{
       window.removeEventListener('scroll', onScroll);
@@ -47,6 +47,6 @@ export default function Daily() {
 }
 
 function onScroll(e: Event) {
-  if (window.location.pathname === '/' && document.documentElement.scrollTop - parseInt(localStorage.getItem('feed-scrollPosition') ?? '0') < 100)
-      localStorage.setItem('feed-scrollPosition', document.documentElement.scrollTop.toString());
+  if (window.location.pathname === '/' && document.documentElement.scrollTop - parseInt(sessionStorage.getItem('feed-scrollPosition') ?? '0') < 100)
+      sessionStorage.setItem('feed-scrollPosition', document.documentElement.scrollTop.toString());
 }

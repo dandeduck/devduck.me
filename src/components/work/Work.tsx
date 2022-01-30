@@ -1,3 +1,4 @@
+import gsap from 'gsap';
 import WorkIntro from './pages/WorkIntro';
 import GameDevelopment from './pages/GameDevelopment';
 import './Work.css'
@@ -5,10 +6,10 @@ import { useEffect } from 'react';
 import * as THREE from 'three';
 
 export default function Work() {
-  localStorage.getItem('work-scrollPosition') ?? localStorage.setItem('work-scrollPosition', '0');
+  sessionStorage.getItem('work-scrollPosition') ?? sessionStorage.setItem('work-scrollPosition', '0');
 
   useEffect(() => {
-    document.documentElement.scrollTop = parseInt(localStorage.getItem('work-scrollPosition') ?? '0');
+    document.documentElement.scrollTop = parseInt(sessionStorage.getItem('work-scrollPosition') ?? '0');
     
     return () =>{
       window.removeEventListener('scroll', onScroll);
@@ -25,19 +26,28 @@ export default function Work() {
     });
     renderer.setSize( window.innerWidth, window.innerHeight );
     renderer.setPixelRatio(window.devicePixelRatio)
-    const geometry = new THREE.BoxGeometry( 1, 1, 1 );
-    const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
+    const geometry = new THREE.BoxGeometry( 13, 7, 1 );
+    const material = new THREE.MeshBasicMaterial( { color: 0x0D1117 } );
     const cube = new THREE.Mesh( geometry, material );
     scene.add( cube );
     camera.position.z = 5;
     const animate = function () {
       requestAnimationFrame( animate );
-      cube.rotation.x += 0.01;
-      cube.rotation.y += 0.01;
       renderer.render( scene, camera );
     };
 
     animate();
+
+    gsap.to(camera.position, {
+      z: 8,
+      scrollTrigger: {
+        trigger: document.querySelector('#gamedev'),
+        start: "top bottom",
+        end: "bottom bottom",
+        scrub: true
+      }
+    });
+
   }, []);
 
   return (
@@ -45,11 +55,13 @@ export default function Work() {
       <canvas className='three'></canvas>
       <WorkIntro/>
       <GameDevelopment/>
+      <div id='gamedev' className='dummy'></div>
+      <div className='dummy'></div>
     </div>
   );
 }
 
 function onScroll(e: Event) {
-  if (window.location.pathname === '/work' && document.documentElement.scrollTop - parseInt(localStorage.getItem('work-scrollPosition') ?? '0') < 100)
-      localStorage.setItem('work-scrollPosition', document.documentElement.scrollTop.toString());
+  if (window.location.pathname === '/work' && document.documentElement.scrollTop - parseInt(sessionStorage.getItem('work-scrollPosition') ?? '0') < 100)
+      sessionStorage.setItem('work-scrollPosition', document.documentElement.scrollTop.toString());
 }
