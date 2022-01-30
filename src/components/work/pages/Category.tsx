@@ -1,4 +1,3 @@
-import gsap from 'gsap';
 import { useEffect } from 'react';
 import animateElement from '../../general/Animation';
 import LocationTeller from '../../general/LocationTeller';
