@@ -1,42 +1,64 @@
 import { useEffect } from 'react';
-import animateElement from '../../general/Animation';
 import LocationTeller from '../../general/LocationTeller';
+import gsap from 'gsap';
 import './Category.css';
 
 export default function Category(props: {title: string, text: JSX.Element, projects: JSX.Element[]}) {
   useEffect(() => {
-    animateElement('.game-development h1', ".game-development",
+    gsap.fromTo('.game-development h1',
     {
       opacity: 0,
       x: -200
     },
     {
       opacity: 1,
-      x: 0
+      x: 0,
+      scrollTrigger: {
+        trigger: '.game-development',
+        start: 'top 50%',
+        end: 'top 20%',
+        scrub: true
+      }
     });
-    animateElement('.game-development-text', ".game-development",
+    gsap.fromTo('.game-development-text',
     {
       opacity: 0
     },
     {
-      opacity: 1
+      opacity: 1,
+      scrollTrigger: {
+        trigger: '.game-development',
+        start: 'top 50%',
+        end: 'top 20%',
+        scrub: true
+      }
     });
-    animateElement('.location-teller', ".game-development",
+    gsap.fromTo('.location-teller',
     {
       opacity: 0,
       x: 200
     },
     {
       opacity: 1,
-      x: 0
+      x: 0,
+      scrollTrigger: {
+        trigger: '.game-development',
+        start: 'top 50%',
+        end: 'top 20%',
+        scrub: true
+      }
     });
-    animateElement('.game-development', ".game-development",
+
+    gsap.to('.game-development',
     {
-      opacity: 1
-    },
-    {
-      opacity: 0
-    }, "top top", "top top");
+      opacity: 0,
+      scrollTrigger: {
+        trigger: '.game-development',
+        start: 'top top',
+        end: 'top top',
+        scrub: true
+      }
+    });
   }, []);
   
   return (
