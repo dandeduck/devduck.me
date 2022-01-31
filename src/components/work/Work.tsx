@@ -1,7 +1,6 @@
 import gsap from 'gsap';
 import WorkIntro from './pages/WorkIntro';
 import GameDevelopment from './pages/GameDevelopment';
-import GameDevelopmentContainer from './pages/GameDevelopmentContainer';
 import './Work.css'
 import { useEffect } from 'react';
 import * as THREE from 'three';
@@ -60,7 +59,7 @@ export default function Work() {
       z: 12,
       scrollTrigger: {
         trigger: '.game-development',
-        start: "bottom bottom",
+        start: "top top",
         end: "bottom top",
         scrub: true
       }
@@ -89,7 +88,7 @@ export default function Work() {
       top: 0,
       onStart: () => {scene.add(object)},
       onReverseComplete: () => {scene.remove(object)}
-    }, "bottom bottom", "bottom bottom");
+    }, "top top", "top top");
   }, []);
 
   return (
@@ -101,7 +100,7 @@ export default function Work() {
       </div>
       {/* <div className='dummy'></div> */}
       {/* <canvas id='webgl'></canvas> */}
-      <GameDevelopmentContainer/>
+      <GameDevelopment/>
       <div className='dummy'></div>
       <div className='dummy'></div>
     </div>
@@ -122,8 +121,6 @@ function createCSS3DObject(content: string)
   div.style.color = 'white';
   
   const object = new CSS3DObject(div);
-
-  object.position.set(0, 0, 0);
   object.scale.set(0.01, 0.01, 0.01);
 
   return object;
