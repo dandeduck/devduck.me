@@ -169,21 +169,6 @@ function enterThree(elementQuery: string, scene: THREE.Scene, object: CSS3DObjec
   })
 }
 
-function exitThree(endQuery: string, scene: THREE.Scene, object: CSS3DObject) {
-  gsap.to('.threeContainer', 
-  {
-    position: 'absolute',
-    top: '100%',
-    onStart: () => {scene.remove(object)},
-    onReverseComplete: () => {scene.add(object)},
-    scrollTrigger: {
-      trigger: endQuery,
-      start: 'top top',
-      end: 'top top'
-    }
-  })
-}
-
 function createCSS3DObject(element: JSX.Element) {
   const wrapper = document.createElement('div');
   wrapper.innerHTML = renderToStaticMarkup(element);;
