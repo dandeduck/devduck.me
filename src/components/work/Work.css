@@ -4,7 +4,7 @@
 
 .threeContainer {
   height: 100vh;
-  position: absolute;
+  position: fixed;
   visibility: hidden;
   overflow: hidden;
   left: 0;
@@ -21,7 +21,7 @@
   /* top: 100%; */
 }
 
-#robotics {
+#web {
   background: red;
 }
 

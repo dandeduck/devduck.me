@@ -27,11 +27,29 @@ export default function Work() {
 
     
     const gameDev = createCSS3DObject(<GameDevelopment/>);
-    setThreeEnter('.game-development', scene, gameDev);
+    enterThree('.game-development', scene, gameDev);
     zoomOutAnimation(camera, '.game-development');
     zoomBackInAnimation(camera);
 
-    
+    enterThree('#web', scene, gameDev, gameDev);
+
+    // const robotics = document.querySelector('#robotics') as Node;
+    // const work = document.querySelector('.work') as Node;
+    // const threeSection = document.querySelector('.three') as Node;
+
+    // gsap.to('#web',
+    //   {
+    //     onStart: () => {work.insertBefore(threeSection, robotics); console.log("moved!")},
+    //     onReverseComplete: () => {},
+    //     scrollTrigger: {
+    //       trigger: "#web",
+    //       start: "bottom bottom",
+    //       end: "bottom bottom",
+    //       markers: true,
+    //       scrub: true
+    //     },
+    //   }
+    // );
   }, []);
 
   return (
@@ -47,6 +65,7 @@ export default function Work() {
         <div id='second-dummy' className='dummy'></div>
         <div id='first-section-ending' className='dummy'></div>
       </section>
+      <div id='web' className='dummy'></div>
       <div id='robotics' className='dummy'></div>
     </div>
   );
@@ -144,9 +163,9 @@ function zoomBackInAnimation(camera: THREE.Camera) {
     }
   });
 
-  gsap.fromTo('.threeContainer', 
+  gsap.fromTo('.threeContainer',
   {
-    immediateRender: false,
+    position: 'fixed',
     top: 0
   },
   {
@@ -166,18 +185,25 @@ function onScroll(e: Event) {
       sessionStorage.setItem('work-scrollPosition', document.documentElement.scrollTop.toString());
 }
 
-function setThreeEnter(elementQuery: string, scene: THREE.Scene, object: CSS3DObject) {
-  gsap.fromTo('.threeContainer', 
+function enterThree(elementQuery: string, scene: THREE.Scene, object: CSS3DObject, prevObject?: CSS3DObject) {
+  gsap.fromTo('.threeContainer',
   {
     position: 'absolute',
-    top: 0
   },
   {
-    position: 'fixed',
     visibility: 'visible',
+    position: 'fixed',
     top: 0,
-    onStart: () => {scene.add(object)},
-    onReverseComplete: () => {scene.remove(object)},
+    onStart: () => {
+      if (prevObject)
+        scene.remove(prevObject);
+      scene.add(object);
+    },
+    onReverseComplete: () => {
+      scene.remove(object)
+      if (prevObject)
+        scene.add(prevObject);
+    },
     scrollTrigger: {
       trigger: elementQuery,
       start: 'top top',

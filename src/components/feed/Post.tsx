@@ -1,5 +1,4 @@
 import ReactMarkdown from 'react-markdown';
-import { Link } from 'react-router-dom';
 import gfm from 'remark-gfm';
 import './Post.css';
 
