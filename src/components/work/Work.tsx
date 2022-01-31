@@ -74,9 +74,30 @@ export default function Work() {
         scrub: true
       }
     });
+
+    gsap.to(camera.position, {
+      immediateRender: false,
+      z: 15,
+      scrollTrigger: {
+        trigger: '#second-dummy',
+        start: "top bottom",
+        end: "bottom top",
+        scrub: true
+      }
+    });
+
+    gsap.to(camera.rotation, {
+      immediateRender: false,
+      y: 0,
+      scrollTrigger: {
+        trigger: '#second-dummy',
+        start: "top bottom",
+        end: "bottom top",
+        scrub: true
+      }
+    });
     
     const object = createCSS3DObject(content);
-    // scene.add(object);
     
     animateElement('.threeContainer', '.game-development', 
     {
@@ -98,11 +119,9 @@ export default function Work() {
         <canvas id='webgl'></canvas>
         <div id='css3d'></div>
       </div>
-      {/* <div className='dummy'></div> */}
-      {/* <canvas id='webgl'></canvas> */}
       <GameDevelopment/>
       <div className='dummy'></div>
-      <div className='dummy'></div>
+      <div id='second-dummy' className='dummy'></div>
     </div>
   );
 }
