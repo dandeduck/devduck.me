@@ -36,7 +36,7 @@ export default function Category(props: {title: string, text: JSX.Element, proje
     },
     {
       opacity: 0
-    }, "top top", "top top");
+    }, "bottom bottom", "bottom bottom");
   }, []);
   
   return (

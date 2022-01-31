@@ -41,6 +41,7 @@
     ]
   },
   "devDependencies": {
-    "@types/three": "^0.137.0"
+    "@types/three": "^0.137.0",
+    "types": "^0.1.1"
   }
 }

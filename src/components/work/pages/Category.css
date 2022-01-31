@@ -1,14 +1,12 @@
 .game-development {
   width: min(60rem, 70%);
-  margin: 0 auto;
-  padding-top: 110px;
+  margin: 0;
+  padding: 0;
   height: calc(100vh - 110px);
   transform: translateY(-110px);
   max-height: fit-content;
 
   display: flex;
-  top: 110px;
-  left: calc((100% - 60rem)/2);
 }
 
 .game-development-centered-container {
