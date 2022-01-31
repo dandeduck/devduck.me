@@ -8,18 +8,6 @@ import { CSS3DRenderer, CSS3DObject } from 'three/examples/jsm/renderers/CSS3DRe
 import { renderToStaticMarkup } from 'react-dom/server'
 
 export default function Work() {
-  sessionStorage.getItem('work-scrollPosition') ?? sessionStorage.setItem('work-scrollPosition', '0');
-
-  useEffect(() => {
-    document.documentElement.scrollTop = parseInt(sessionStorage.getItem('work-scrollPosition') ?? '0');
-    
-    return () =>{
-      window.removeEventListener('scroll', onScroll);
-    };
-  }, []);
-
-  window.addEventListener('scroll', onScroll);
-
   useEffect(() => {
     const three = initThree();
     const camera = three.camera;
@@ -30,26 +18,9 @@ export default function Work() {
     enterThree('.game-development', scene, gameDev);
     zoomOutAnimation(camera, '.game-development');
     zoomBackInAnimation(camera);
-
-    enterThree('#web', scene, gameDev, gameDev);
-
-    // const robotics = document.querySelector('#robotics') as Node;
-    // const work = document.querySelector('.work') as Node;
-    // const threeSection = document.querySelector('.three') as Node;
-
-    // gsap.to('#web',
-    //   {
-    //     onStart: () => {work.insertBefore(threeSection, robotics); console.log("moved!")},
-    //     onReverseComplete: () => {},
-    //     scrollTrigger: {
-    //       trigger: "#web",
-    //       start: "bottom bottom",
-    //       end: "bottom bottom",
-    //       markers: true,
-    //       scrub: true
-    //     },
-    //   }
-    // );
+    
+    const webDev = createCSS3DObject(<WorkIntro/>);
+    enterThree('#web', scene, webDev, gameDev);
   }, []);
 
   return (
@@ -178,11 +149,6 @@ function zoomBackInAnimation(camera: THREE.Camera) {
       scrub: true
     }
   });
-}
-
-function onScroll(e: Event) {
-  if (window.location.pathname === '/work' && document.documentElement.scrollTop - parseInt(sessionStorage.getItem('work-scrollPosition') ?? '0') < 100)
-      sessionStorage.setItem('work-scrollPosition', document.documentElement.scrollTop.toString());
 }
 
 function enterThree(elementQuery: string, scene: THREE.Scene, object: CSS3DObject, prevObject?: CSS3DObject) {
