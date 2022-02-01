@@ -12,6 +12,12 @@ const ids = ['start', 'game', 'web', 'robotics'];
 
 export default function Work() {
   useEffect(() => {
+    document.querySelector('#start')?.scrollIntoView({behavior: 'smooth'});
+
+    return () => {document.documentElement.scrollTop = 0}
+  }, []);
+  
+  useEffect(() => {
     const three = initThree();
     const camera = three.camera;
     const scene = three.scene;
