@@ -4,11 +4,11 @@ export default function LocationTeller(props: {locations: string[], currentLocat
   const onClick = (e: React.MouseEvent, id: string) => {
     e.preventDefault();
     document.getElementById(id)?.scrollIntoView({behavior: 'smooth', block: "start"});
-};
+  };
 
   return (
     <div className='location-teller'>
-      {props.locations.map((location, i) => <a key={i} href='/' onClick={e => onClick(e, location)} className={props.currentLocation === location ? 'selected' : 'unselected'}>{location}</a>)}
+      {props.locations.map((location, i) => <span key={i} className={props.currentLocation === location ? 'selected' : 'unselected'}>{location}</span>)}
     </div>
   );
 }
