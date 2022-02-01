@@ -54,7 +54,6 @@ export default function Work() {
 
 function makeAnchorLinksClickable(object: CSS3DObject) {
   const links = object.element.querySelectorAll('.location-teller a');
-  console.log(links.length);
 
   for (let i = 0; i < links.length; i++) {
     const element = links[i] as HTMLElement;

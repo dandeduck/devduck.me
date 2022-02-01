@@ -10,7 +10,7 @@ export default function LocationTeller(props: {locations: string[], ids: string[
 
   for (let i = 0; i < links.length; i++) {
     const element = links[i] as HTMLElement;
-    element.addEventListener('click', event => onClick(event, props.ids[i]));
+    element.addEventListener('click', event => onClick(event, props.ids[i%props.ids.length]));
   }
   
 
