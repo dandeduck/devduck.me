@@ -26,13 +26,14 @@ export default function Work() {
     const webDev = createCSS3DObject(<FullstackWeb/>);
     makeAnchorLinksClickable(webDev);
     enterThree('#web', scene, webDev, gameDev);
+    secondSectionAnimation(camera);
   }, []);
 
   return (
     <div className='work'>
       <WorkIntro/>
       <GameDevelopment/>
-      <section className='firstThree'>
+      <section>
         <div className='threeContainer'>
           <canvas id='webgl'></canvas>
           <div id='css3d'></div>
@@ -42,6 +43,11 @@ export default function Work() {
         <div id='first-section-ending' className='dummy'></div>
       </section>
       <FullstackWeb/>
+      <section>
+        <div className='dummy'></div>
+        <div id='second-section-ending' className='dummy'></div>
+      </section>
+      <div className='dummy'></div>
     </div>
   );
 }
@@ -96,6 +102,71 @@ function initThree() {
 function firstSectionAnimation(camera: THREE.Camera) {
   firstZoomOutAnimation(camera);
   firstZoomBackInAnimation(camera);
+}
+
+function secondSectionAnimation(camera: THREE.Camera) {
+  secondZoomOutAnimation(camera);
+  secondZoomBackInAnimation(camera);
+}
+
+function secondZoomOutAnimation(camera: THREE.Camera) {
+  gsap.to(camera.position, {
+    z: 12,
+    scrollTrigger: {
+      trigger: '#web',
+      start: "top top",
+      end: "bottom top",
+      scrub: true
+    }
+  });
+  
+  gsap.to(camera.rotation, {
+    y: -0.25,
+    scrollTrigger: {
+      trigger: '#web',
+      start: "top top",
+      end: "bottom top",
+      scrub: true
+    }
+  });
+}
+
+function secondZoomBackInAnimation(camera: THREE.Camera) {
+  gsap.to(camera.position, {
+      z: 8.5,
+      scrollTrigger: {
+        trigger: '#second-section-ending',
+        start: "top bottom",
+        end: "top top",
+        scrub: true
+      }
+    });
+  
+  gsap.to(camera.rotation, {
+    y: 0,
+    scrollTrigger: {
+      trigger: '#second-section-ending',
+      start: "top bottom",
+      end: "top top",
+      scrub: true
+    }
+  });
+
+  gsap.fromTo('.threeContainer',
+  {
+    position: 'fixed',
+    top: 0
+  },
+  {
+    position: 'absolute',
+    top: 'calc(100% + 200vh)',
+    scrollTrigger: {
+      trigger: '#second-section-ending',
+      start: "top top",
+      end: "top top",
+      scrub: true
+    }
+  });
 }
 
 function firstZoomOutAnimation(camera: THREE.Camera) {

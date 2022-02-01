@@ -3,8 +3,8 @@ import Category from './Category';
 
 export default function GameDevelopment() {
   const projects = [(
-    <Project name='asteroids UNLIMITED' link='https://github.com/dandeduck/asteroids-unlimited' description='A space themed RTS style game, with ship combat, building, movement and capturing mechanics. Developed with help in modeling and visual design by my friends.' technologies={['Unity', 'AI', 'Multiplayer']} />),
-    (<Project name='savanna' link='https://github.com/dandeduck/savanna' description='Prototype project, developed to learn the ins and outs of the Unity game engine and different approaches to RPG mechanics. Like items, crafting, world generation and others.' technologies={['Unity', 'RPG Systems']} />)
+    <Project name='Asteroids UNLIMITED' link='https://github.com/dandeduck/asteroids-unlimited' description='A space themed RTS style game, with ship combat, building, movement and capturing mechanics. Developed with help in modeling and visual design by my friends.' technologies={['Unity', 'AI', 'Multiplayer']} />),
+    (<Project name='Savanna' link='https://github.com/dandeduck/savanna' description='Prototype project, developed to learn the ins and outs of the Unity game engine and different approaches to RPG mechanics. Like items, crafting, world generation and others.' technologies={['Unity', 'RPG Systems']} />)
   ];
     
   const text = (

@@ -15,7 +15,7 @@ export default function Category(props: {title: string, id: string, text: JSX.El
             <h1>{props.title}</h1>
             <div className='category-text'>{props.text}</div>
           </div>
-          <LocationTeller locations={['start', 'game development', 'fullstack web', 'robotics']} ids={['start', 'game', 'web', 'robotics']} currentLocation='game development'/>
+          <LocationTeller locations={['start', 'game development', 'fullstack web', 'robotics']} ids={['start', 'game', 'web', 'robotics']} currentLocation={props.title}/>
         </div>
         <div className='category-projects'>
           {props.projects.map((project, i) => <div key={i}>{project}</div>)}
