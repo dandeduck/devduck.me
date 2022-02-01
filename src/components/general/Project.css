@@ -44,7 +44,7 @@
 
 .project-description {
   opacity: 0.8;
-  margin-top: 1rem;
+  margin-block: 1rem;
   font-size: 1.1rem;
 }
 
@@ -52,9 +52,4 @@
   opacity: 0.6;
   font-size: 0.8rem;
   margin-right: 1rem;
-}
-
-.project-technologies {
-  bottom: 1rem;
-  position: absolute;
 }

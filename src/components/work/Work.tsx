@@ -180,15 +180,22 @@ function enterThree(elementQuery: string, scene: THREE.Scene, object: CSS3DObjec
 }
 
 function createCSS3DObject(element: JSX.Element) {
+  console.log(window.innerHeight);
+  const defaultHeight = 796;
+  const currentHeight = window.innerHeight;
+  const scale = 0.01 * (defaultHeight/currentHeight);
+
   const wrapper = document.createElement('div');
   wrapper.innerHTML = renderToStaticMarkup(element);;
 
   const html = wrapper.firstChild as HTMLElement;
 
   html.style.color = 'white';
+  // html.style.paddingTop = `${110 * scale}`;
+  html.style.height = '100%';
   
   const object = new CSS3DObject(html);
-  object.scale.set(0.01, 0.01, 0.01);
+  object.scale.set(scale, scale, 1);
 
   return object;
 }
