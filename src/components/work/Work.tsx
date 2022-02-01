@@ -11,6 +11,7 @@ import { renderToStaticMarkup } from 'react-dom/server'
 const ids = ['start', 'game', 'web', 'robotics'];
 
 export default function Work() {
+
   useEffect(() => {
     const three = initThree();
     const camera = three.camera;

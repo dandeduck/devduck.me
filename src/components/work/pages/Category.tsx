@@ -6,7 +6,7 @@ import './Category.css';
 export default function Category(props: {title: string, id: string, text: JSX.Element, projects: JSX.Element[]}) {
   useEffect(() => {
     setupAnimations(props.id);
-  }, []);
+  }, [props.id]);
   
   return (
     <div id={props.id} className='category code-look'>

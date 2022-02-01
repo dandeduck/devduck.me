@@ -9,13 +9,13 @@ export default function FullstackWeb() {
     
   const text = (
     <div>
-      <p>I first began my game development journey by learning Unity through the internet, by then I already had a number of years of experience in software development in general.</p>
-      <p>I got my <i>professional</i> experience by working on simulations and educational tools for the IAF.</p> 
-      <p>In total, I have 1 year of experience with one <a href='https://github.com/dandeduck/asteroids-unlimited' className='link' target="_blank" rel="noreferrer">indie game</a> under development and one prototype game.</p>
+      <p>Initially I studied network communications, after which I wrote some simple socket servers in Python and Java for assignments and some small personal projects.</p>
+      <p>Later on while working at the IAF, I transitioned into fullstack starting from <i><b>Django</b></i> and then by learning and using front end framework like <i><b>Angular and React</b></i> and back end frameworks like <i><b>Express and NestJS</b></i>.</p> 
+      <p>All together I have 1+ years of professional development in full stack web development, and some smaller open source projects, including this very site.</p>
     </div>
   );
 
   return (
-    <Category title='game development' id='web' text={text} projects={projects}/>
+    <Category title='fullstack web' id='web' text={text} projects={projects}/>
   );
 }
