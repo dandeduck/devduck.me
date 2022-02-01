@@ -1,17 +1,15 @@
-.game-development {
+.category {
   width: min(60rem, 90%);
-  display: grid;
+  display: flex;
+  flex-direction: column;
   margin: 0 auto;
   height: 100vh;
-  place-content: center;
+  justify-content: center;
 }
 
-.game-development div:first-child {
-  height: 100%;
-}
-
-.game-development h1 {
-  margin-block: 1rem;
+.category h1 {
+  margin-top: 0;
+  margin-bottom: 2rem;
   font-size: 3rem;
   text-transform: capitalize;
 }
@@ -27,25 +25,22 @@
   }
 }
 
-.game-development-container {
+.category-container {
+  width: 100%;
   display: flex;
   justify-content: space-between;
 }
 
-.game-development-main {
-  width: 100%;
-}
-
-.game-development-text:first-child {
+.category-text:first-child {
   margin-top: 0;
 }
 
-.game-development-text {
+.category-text {
   width: 35rem;
   font-size: 1.1rem;
 }
 
-.game-development-projects {
+.category-projects {
   display: flex;
   justify-content: start;
   gap: 1rem;

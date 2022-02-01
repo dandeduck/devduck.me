@@ -15,8 +15,8 @@ export default function Work() {
 
     
     const gameDev = createCSS3DObject(<GameDevelopment/>);
-    enterThree('.game-development', scene, gameDev);
-    zoomOutAnimation(camera, '.game-development');
+    enterThree('.category', scene, gameDev);
+    zoomOutAnimation(camera, '.category');
     zoomBackInAnimation(camera);
     
     const webDev = createCSS3DObject(<WorkIntro/>);
@@ -191,8 +191,6 @@ function createCSS3DObject(element: JSX.Element) {
   const html = wrapper.firstChild as HTMLElement;
 
   html.style.color = 'white';
-  // html.style.paddingTop = `${110 * scale}`;
-  html.style.height = '100%';
   
   const object = new CSS3DObject(html);
   object.scale.set(scale, scale, 1);
