@@ -1,14 +1,22 @@
 import './LocationTeller.css';
 
-export default function LocationTeller(props: {locations: string[], currentLocation: string}) {
-  const onClick = (e: React.MouseEvent, id: string) => {
+export default function LocationTeller(props: {locations: string[], ids: string[], currentLocation: string}) {
+  const onClick = (e: Event, id: string) => {
     e.preventDefault();
     document.getElementById(id)?.scrollIntoView({behavior: 'smooth', block: "start"});
   };
 
+  const links = document.querySelectorAll('.location-teller a');
+
+  for (let i = 0; i < links.length; i++) {
+    const element = links[i] as HTMLElement;
+    element.addEventListener('click', event => onClick(event, props.ids[i]));
+  }
+  
+
   return (
     <div className='location-teller'>
-      {props.locations.map((location, i) => <span key={i} className={props.currentLocation === location ? 'selected' : 'unselected'}>{location}</span>)}
+      {props.locations.map((location, i) => <a href='/' key={i} className={props.currentLocation === location ? 'selected' : 'unselected'}>{location}</a>)}
     </div>
   );
 }

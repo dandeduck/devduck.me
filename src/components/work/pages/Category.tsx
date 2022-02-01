@@ -3,19 +3,19 @@ import LocationTeller from '../../general/LocationTeller';
 import gsap from 'gsap';
 import './Category.css';
 
-export default function Category(props: {title: string, text: JSX.Element, projects: JSX.Element[]}) {
+export default function Category(props: {title: string, id: string, text: JSX.Element, projects: JSX.Element[]}) {
   useEffect(() => {
     setupAnimations();
   }, []);
   
   return (
-    <div className='category code-look'>
+    <div id={props.id} className='category code-look'>
         <div className='category-container'>
           <div>
             <h1>{props.title}</h1>
             <div className='category-text'>{props.text}</div>
           </div>
-          <LocationTeller locations={['start', 'game development', 'fullstack web', 'robotics']} currentLocation='game development'/>
+          <LocationTeller locations={['start', 'game development', 'fullstack web', 'robotics']} ids={['start', 'game', 'web', 'robotics']} currentLocation='game development'/>
         </div>
         <div className='category-projects'>
           {props.projects.map((project, i) => <div key={i}>{project}</div>)}

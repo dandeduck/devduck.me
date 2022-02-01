@@ -7,19 +7,22 @@ import * as THREE from 'three';
 import { CSS3DRenderer, CSS3DObject } from 'three/examples/jsm/renderers/CSS3DRenderer.js';
 import { renderToStaticMarkup } from 'react-dom/server'
 
+const ids = ['start', 'game', 'web', 'robotics'];
+
 export default function Work() {
   useEffect(() => {
     const three = initThree();
     const camera = three.camera;
     const scene = three.scene;
 
-    
     const gameDev = createCSS3DObject(<GameDevelopment/>);
-    enterThree('.category', scene, gameDev);
-    zoomOutAnimation(camera, '.category');
-    zoomBackInAnimation(camera);
+    makeAnchorLinksClickable(gameDev);
+    
+    enterThree('#game', scene, gameDev);
+    firstSectionAnimation(camera);
     
     const webDev = createCSS3DObject(<WorkIntro/>);
+    makeAnchorLinksClickable(webDev);
     enterThree('#web', scene, webDev, gameDev);
   }, []);
 
@@ -40,6 +43,16 @@ export default function Work() {
       <div id='robotics' className='dummy'></div>
     </div>
   );
+}
+
+function makeAnchorLinksClickable(object: CSS3DObject) {
+  const links = object.element.querySelectorAll('.location-teller a');
+  console.log(links.length);
+
+  for (let i = 0; i < links.length; i++) {
+    const element = links[i] as HTMLElement;
+    element.addEventListener('click', event => onClick(event, ids[i]));
+  }
 }
 
 function initThree() {
@@ -79,11 +92,16 @@ function initThree() {
   };
 }
 
-function zoomOutAnimation(camera: THREE.Camera, trigger: string) {
+function firstSectionAnimation(camera: THREE.Camera) {
+  firstZoomOutAnimation(camera);
+  firstZoomBackInAnimation(camera);
+}
+
+function firstZoomOutAnimation(camera: THREE.Camera) {
   gsap.to(camera.position, {
     z: 12,
     scrollTrigger: {
-      trigger: trigger,
+      trigger: '#game',
       start: "top top",
       end: "bottom top",
       scrub: true
@@ -93,7 +111,7 @@ function zoomOutAnimation(camera: THREE.Camera, trigger: string) {
   gsap.to(camera.rotation, {
     y: 0.5,
     scrollTrigger: {
-      trigger: trigger,
+      trigger: '#game',
       start: "bottom center",
       end: "bottom top",
       scrub: true
@@ -111,7 +129,7 @@ function zoomOutAnimation(camera: THREE.Camera, trigger: string) {
   });
 }
 
-function zoomBackInAnimation(camera: THREE.Camera) {
+function firstZoomBackInAnimation(camera: THREE.Camera) {
   gsap.to(camera.position, {
     immediateRender: false,
     z: 8.5,
@@ -179,8 +197,12 @@ function enterThree(elementQuery: string, scene: THREE.Scene, object: CSS3DObjec
   })
 }
 
+function onClick(e: Event, id: string) {
+  e.preventDefault();
+  document.getElementById(id)?.scrollIntoView({behavior: 'smooth', block: "start"});
+}
+
 function createCSS3DObject(element: JSX.Element) {
-  console.log(window.innerHeight);
   const defaultHeight = 796;
   const currentHeight = window.innerHeight;
   const scale = 0.01 * (defaultHeight/currentHeight);

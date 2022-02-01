@@ -16,6 +16,6 @@ export default function GameDevelopment() {
   );
 
   return (
-    <Category title='game development' text={text} projects={projects}/>
+    <Category title='game development' id='game' text={text} projects={projects}/>
   );
 }

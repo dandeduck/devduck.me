@@ -32,7 +32,6 @@ export default function ContactForm(props: {handleContactRequest:  (contact : Co
 
     let wasSent = await props.handleContactRequest(contact);
 
-    console.log(wasSent);
     setSent(wasSent);
 
     if (wasSent) {
@@ -64,7 +63,7 @@ export default function ContactForm(props: {handleContactRequest:  (contact : Co
         </div>
       </div>
       <button type='submit' className='submit code-look'>
-        git push
+        send
         <SendConfirmation></SendConfirmation>
         <Sending/>
       </button>
