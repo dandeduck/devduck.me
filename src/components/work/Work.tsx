@@ -1,6 +1,7 @@
 import gsap from 'gsap';
 import WorkIntro from './pages/WorkIntro';
 import GameDevelopment from './pages/GameDevelopment';
+import FullstackWeb from './pages/FullstackWeb';
 import './Work.css'
 import { useEffect } from 'react';
 import * as THREE from 'three';
@@ -21,7 +22,7 @@ export default function Work() {
     enterThree('#game', scene, gameDev);
     firstSectionAnimation(camera);
     
-    const webDev = createCSS3DObject(<WorkIntro/>);
+    const webDev = createCSS3DObject(<FullstackWeb/>);
     makeAnchorLinksClickable(webDev);
     enterThree('#web', scene, webDev, gameDev);
   }, []);
@@ -30,7 +31,7 @@ export default function Work() {
     <div className='work'>
       <WorkIntro/>
       <GameDevelopment/>
-      <section className='three'>
+      <section className='firstThree'>
         <div className='threeContainer'>
           <canvas id='webgl'></canvas>
           <div id='css3d'></div>
@@ -39,8 +40,7 @@ export default function Work() {
         <div id='second-dummy' className='dummy'></div>
         <div id='first-section-ending' className='dummy'></div>
       </section>
-      <div id='web' className='dummy'></div>
-      <div id='robotics' className='dummy'></div>
+      <FullstackWeb/>
     </div>
   );
 }

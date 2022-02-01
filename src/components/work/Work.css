@@ -21,14 +21,10 @@
   /* top: 100%; */
 }
 
-#web {
-  background: red;
-}
-
 .dummy {
   height: 100vh;
 }
 
-section.three {
+section {
   position: relative;
 }
