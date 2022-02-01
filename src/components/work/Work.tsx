@@ -11,7 +11,6 @@ import { renderToStaticMarkup } from 'react-dom/server'
 const ids = ['start', 'game', 'web', 'robotics'];
 
 export default function Work() {
-
   useEffect(() => {
     const three = initThree();
     const camera = three.camera;
@@ -132,16 +131,18 @@ function secondZoomOutAnimation(camera: THREE.Camera) {
 
 function secondZoomBackInAnimation(camera: THREE.Camera) {
   gsap.to(camera.position, {
-      z: 8.5,
-      scrollTrigger: {
-        trigger: '#second-section-ending',
-        start: "top bottom",
-        end: "top top",
-        scrub: true
-      }
+    immediateRender: false,
+    z: 8.5,
+    scrollTrigger: {
+      trigger: '#second-section-ending',
+      start: "top bottom",
+      end: "top top",
+      scrub: true
+    }
     });
   
   gsap.to(camera.rotation, {
+    immediateRender: false,
     y: 0,
     scrollTrigger: {
       trigger: '#second-section-ending',
