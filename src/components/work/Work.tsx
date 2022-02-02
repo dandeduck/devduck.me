@@ -182,7 +182,7 @@ function thirdZoomBackInAnimation(camera: THREE.Camera) {
   },
   {
     position: 'absolute',
-    top: 'calc(100% + 200vh)',
+    top: 'calc(100% + 500vh)',
     scrollTrigger: {
       trigger: '#third-section-ending',
       start: "top top",
