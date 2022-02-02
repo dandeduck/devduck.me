@@ -1,6 +1,6 @@
 import gsap from 'gsap';
 import * as THREE from 'three';
-import  {animateScroll as scroll, scroller, Link} from 'react-scroll';
+import  {animateScroll as scroll, scroller} from 'react-scroll';
 import WorkIntro from './pages/WorkIntro';
 import GameDevelopment from './pages/GameDevelopment';
 import FullstackWeb from './pages/FullstackWeb';
