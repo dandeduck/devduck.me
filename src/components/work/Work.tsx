@@ -1,9 +1,11 @@
 import gsap from 'gsap';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import * as THREE from 'three';
 import  {animateScroll as scroll, scroller} from 'react-scroll';
 import WorkIntro from './pages/WorkIntro';
 import GameDevelopment from './pages/GameDevelopment';
 import FullstackWeb from './pages/FullstackWeb';
+import Robotics from './pages/Robotics';
 import { useEffect } from 'react';
 import { CSS3DRenderer, CSS3DObject } from 'three/examples/jsm/renderers/CSS3DRenderer.js';
 import { renderToStaticMarkup } from 'react-dom/server';
@@ -12,16 +14,6 @@ import './Work.css';
 const ids = ['start', 'game', 'web', 'robotics'];
 
 export default function Work() {
-  useEffect(() => {
-    // ScrollTrigger.scrollerProxy('.work', {
-    //   scrollTop(value) {
-    //     if (arguments.length && value)
-    //       scrollbar.scrollTop = value;
-    //     return scrollbar.scrollTop;
-    //   }
-    // });
-  }, []);
-
   useEffect(() => {
     scroll.scrollToTop();
 
@@ -43,6 +35,11 @@ export default function Work() {
     makeAnchorLinksWork(webDev);
     enterThree('#web', scene, webDev, gameDev);
     secondSectionAnimation(camera);
+
+    const robotics = createCSS3DObject(<Robotics/>);
+    makeAnchorLinksWork(robotics);
+    enterThree('#robotics', scene, robotics, webDev);
+    thirdSectionAnimation(camera);
   }, []);
 
   return (
@@ -63,7 +60,11 @@ export default function Work() {
         <div className='dummy'></div>
         <div id='second-section-ending' className='dummy'></div>
       </section>
-      <div className='dummy'></div>
+      <Robotics/>
+      <section>
+        <div className='dummy'></div>
+        <div id='third-section-ending' className='dummy'></div>
+      </section>
     </div>
   );
 }
@@ -78,7 +79,6 @@ function makeAnchorLinksWork(object: CSS3DObject) {
 }
 
 function initThree() {
-  console.log(window.innerHeight);
   const css3DRenderer = new CSS3DRenderer({
     element: document.querySelector('#css3d') as HTMLElement
   });
@@ -86,7 +86,7 @@ function initThree() {
 
   const webglRenderer = new THREE.WebGLRenderer({
     canvas: document.querySelector('#webgl') as HTMLElement,
-    alpha: true,
+    alpha: true
   });
   webglRenderer.setSize(window.innerWidth, window.innerHeight);
   webglRenderer.setPixelRatio(window.devicePixelRatio);
@@ -123,6 +123,73 @@ function firstSectionAnimation(camera: THREE.Camera) {
 function secondSectionAnimation(camera: THREE.Camera) {
   secondZoomOutAnimation(camera);
   secondZoomBackInAnimation(camera);
+}
+
+function thirdSectionAnimation(camera: THREE.Camera) {
+  thirdZoomOutAnimation(camera);
+  thirdZoomBackInAnimation(camera);
+}
+
+function thirdZoomOutAnimation(camera: THREE.Camera) {
+  gsap.to(camera.position, {
+    z: 12,
+    scrollTrigger: {
+      trigger: '#robotics',
+      start: "top top",
+      end: "bottom top",
+      scrub: true
+    }
+  });
+  
+  gsap.to(camera.rotation, {
+    y: -0.25,
+    scrollTrigger: {
+      trigger: '#robotics',
+      start: "top top",
+      end: "bottom top",
+      scrub: true
+    }
+  });
+}
+
+function thirdZoomBackInAnimation(camera: THREE.Camera) {
+  gsap.to(camera.position, {
+    immediateRender: false,
+    z: 8.5,
+    scrollTrigger: {
+      trigger: '#third-section-ending',
+      start: "top bottom",
+      end: "top top",
+      scrub: true
+    }
+    });
+  
+  gsap.to(camera.rotation, {
+    immediateRender: false,
+    y: 0,
+    scrollTrigger: {
+      trigger: '#third-section-ending',
+      start: "top bottom",
+      end: "top top",
+      scrub: true
+    }
+  });
+
+  gsap.fromTo('.threeContainer',
+  {
+    position: 'fixed',
+    top: 0
+  },
+  {
+    position: 'absolute',
+    top: 'calc(100% + 200vh)',
+    scrollTrigger: {
+      trigger: '#third-section-ending',
+      start: "top top",
+      end: "top top",
+      scrub: true
+    }
+  });
 }
 
 function secondZoomOutAnimation(camera: THREE.Camera) {
@@ -290,7 +357,6 @@ function enterThree(elementQuery: string, scene: THREE.Scene, object: CSS3DObjec
 function onClick(e: Event, id: string) {
   e.preventDefault();
   scroller.scrollTo(id, {smooth: true});
-  document.getElementById(id)?.scrollIntoView({behavior: 'smooth', block: "start"});
 }
 
 function createCSS3DObject(element: JSX.Element) {
