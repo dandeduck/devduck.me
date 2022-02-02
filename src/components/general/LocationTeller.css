@@ -11,6 +11,7 @@
   margin-bottom: 1.5rem;
 
   transition: all 200ms;
+  cursor: pointer;
 }
 
 .location-teller a:hover {

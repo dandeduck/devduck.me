@@ -1,18 +1,29 @@
 import gsap from 'gsap';
+import * as THREE from 'three';
+import  {animateScroll as scroll, scroller, Link} from 'react-scroll';
 import WorkIntro from './pages/WorkIntro';
 import GameDevelopment from './pages/GameDevelopment';
 import FullstackWeb from './pages/FullstackWeb';
-import './Work.css'
 import { useEffect } from 'react';
-import * as THREE from 'three';
 import { CSS3DRenderer, CSS3DObject } from 'three/examples/jsm/renderers/CSS3DRenderer.js';
-import { renderToStaticMarkup } from 'react-dom/server'
+import { renderToStaticMarkup } from 'react-dom/server';
+import './Work.css';
 
 const ids = ['start', 'game', 'web', 'robotics'];
 
 export default function Work() {
   useEffect(() => {
-    document.querySelector('#start')?.scrollIntoView({behavior: 'smooth'});
+    // ScrollTrigger.scrollerProxy('.work', {
+    //   scrollTop(value) {
+    //     if (arguments.length && value)
+    //       scrollbar.scrollTop = value;
+    //     return scrollbar.scrollTop;
+    //   }
+    // });
+  }, []);
+
+  useEffect(() => {
+    scroll.scrollToTop();
 
     return () => {document.documentElement.scrollTop = 0}
   }, []);
@@ -23,13 +34,13 @@ export default function Work() {
     const scene = three.scene;
 
     const gameDev = createCSS3DObject(<GameDevelopment/>);
-    makeAnchorLinksClickable(gameDev);
+    makeAnchorLinksWork(gameDev);
     
     enterThree('#game', scene, gameDev);
     firstSectionAnimation(camera);
     
     const webDev = createCSS3DObject(<FullstackWeb/>);
-    makeAnchorLinksClickable(webDev);
+    makeAnchorLinksWork(webDev);
     enterThree('#web', scene, webDev, gameDev);
     secondSectionAnimation(camera);
   }, []);
@@ -57,7 +68,7 @@ export default function Work() {
   );
 }
 
-function makeAnchorLinksClickable(object: CSS3DObject) {
+function makeAnchorLinksWork(object: CSS3DObject) {
   const links = object.element.querySelectorAll('.location-teller a');
 
   for (let i = 0; i < links.length; i++) {
@@ -67,6 +78,7 @@ function makeAnchorLinksClickable(object: CSS3DObject) {
 }
 
 function initThree() {
+  console.log(window.innerHeight);
   const css3DRenderer = new CSS3DRenderer({
     element: document.querySelector('#css3d') as HTMLElement
   });
@@ -277,6 +289,7 @@ function enterThree(elementQuery: string, scene: THREE.Scene, object: CSS3DObjec
 
 function onClick(e: Event, id: string) {
   e.preventDefault();
+  scroller.scrollTo(id, {smooth: true});
   document.getElementById(id)?.scrollIntoView({behavior: 'smooth', block: "start"});
 }
 
