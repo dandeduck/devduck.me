@@ -49,7 +49,7 @@ export default function About() {
         <p><span className='know'>DBs and technologies: </span>Linux 4 years, MongoDB 1 year, Redis 1 year, Node 1 year, Firebase 1 year</p>
         <h1>Where have I worked?</h1>
         <Experience company='israeli air force' title='fullstack developer' from={'April 2021'} to={'April 2022'} points={['Developed webapps in use by thousands of users', 'Integrate complex, multi interface and legacy programs', 'Used the MEAN stack with Azure for most projects']}/>
-        <Experience company='israeli air force' title='fullstack developer' from={'April 2021'} to={'April 2022'} points={['Developed webapps in use by thousands of users', 'Integrate complex, multi interface and legacy programs', 'Used the MEAN stack with Azure for most projects']}/>
+        <Experience company='FRC team' title='lead programmer' from={'July 2017'} to={'July 2020'} points={['Led a team of 6 developers, from teaching and mentoring to reviewing and delegating tasks', 'Worked on complex systems as part of a large 60kg robot', 'Created and contributed to many open source projects in Java', 'Setup an efficient and organized workflow to maximise productivity']}/>
       </section>
     </div>
   );
