@@ -5,6 +5,7 @@ import Navbar from './components/navbar/Navbar';
 import Feed from './components/feed/Feed';
 import Contact from './components/contact/Contact';
 import Work from './components/work/Work';
+import About from './components/about/About';
 import './App.css';
 
 export default function App() {
@@ -18,7 +19,8 @@ export default function App() {
           <Routes>
             <Route path="/contact" element={<Contact handleContactRequest={() => {return Promise.resolve(true)}} />}/>
             <Route path="/work" element={<Work/>}/>
-            <Route path="/" element={<Feed/>}/>
+            <Route path="/daily" element={<Feed/>}/>
+            <Route path="/" element={<About/>}/>
           </Routes>
         </div>
       </BrowserRouter>

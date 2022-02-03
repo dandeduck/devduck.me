@@ -1,0 +1,75 @@
+.about {
+  width: min(80rem, 90%);
+  margin-inline: auto;
+}
+
+.hello-container {
+  display: flex;
+  font-family: monospace;
+  justify-content: flex-start;
+  width: fit-content;
+
+  gap: 1ch;
+  font-size: 3rem;
+  margin-top: 10rem;
+  width: 19ch;
+}
+
+.about-content {
+  display: flex;
+  gap: 2rem;
+}
+
+.about img {
+  width: 20rem;
+  box-shadow: 20px 10px var(--accent-orange);
+}
+
+.about-text {
+  font-size: 1.5rem;
+}
+
+.about h1 {
+  display: inline-block;
+  font-size: 1em;
+}
+
+.about .terminal-start::after {
+  content: '_';
+  color: var(--accent-orange);
+
+  animation: blink .75s step-end infinite;
+}
+
+.about .hello {
+  width: 0;
+  animation: typing 1.5s steps(14) 0.5s forwards;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.about .carret {
+  content: '|';
+
+  font-weight: lighter;
+  transform: translateX(-1.5ch);
+  animation: disappear 2s step-end 1 forwards;
+}
+
+@keyframes disappear {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0
+  }
+  to {
+    width: 14ch;
+  }
+}
