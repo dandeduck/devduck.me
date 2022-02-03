@@ -1,0 +1,43 @@
+.location-teller {
+  width: 17rem;
+}
+
+.location-teller a {
+  display: block;
+
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+
+  transition: all 200ms;
+  cursor: pointer;
+}
+
+.location-teller a:hover {
+  opacity: 1;
+}
+
+.location-teller .selected::before {
+  content: '_';
+
+  color: var(--accent-orange);
+  width: auto;
+  scale: 1;
+
+  animation: blink .75s step-end infinite;
+}
+
+.location-teller .unselected {
+  opacity: 0.8;
+  transition: all linear 100ms;
+}
+
+@keyframes blink {
+  from, to {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}

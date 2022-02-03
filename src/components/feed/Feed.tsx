@@ -1,5 +1,7 @@
 import Post from './Post';
 import './Feed.css';
+import { useEffect, } from 'react';
+
 
 export default function Daily() {
   const short : string = `
@@ -10,8 +12,9 @@ export default function Daily() {
   # Welcome the Destroyer!
   our second ship
 
-  ![Destroyer](https://res.cloudinary.com/dandeduck/image/upload/v1642857955/cld-sample.jpg)
+  ![Destroyer](https://i.pinimg.com/originals/85/00/3b/85003b8e414d2708f18fcb0fd1ccecf0.png)
   ## Second heading
+  ### Third heading
   some more
   \`\`\`
   function(test) {
@@ -23,10 +26,27 @@ export default function Daily() {
   `;
   const date = new Date(2022, 1, 24, 16);
 
+  sessionStorage.getItem('feed-scrollPosition') ?? sessionStorage.setItem('feed-scrollPosition', '0');
+
+  useEffect(() => {
+    document.documentElement.scrollTop = parseInt(sessionStorage.getItem('feed-scrollPosition') ?? '0');
+
+    return () =>{
+      window.removeEventListener('scroll', onScroll);
+    };
+  }, []);
+
+  window.addEventListener('scroll', onScroll);
+
   return (
-    <div className='Feed'>
-      <Post markdown={short} project='Tracer' date={new Date(2022, 1, 24, 10)} now={date}/>
+    <div className='Feed code-look'>
       <Post markdown={long} project='Asteroids UNLIMITED' date={new Date(2022, 1, 24, 15, 50)} now={date}/>
+      <Post markdown={short} project='Tracer' date={new Date(2022, 1, 24, 10)} now={date}/>
     </div>
   );
+}
+
+function onScroll(e: Event) {
+  if (window.location.pathname === '/' && document.documentElement.scrollTop - parseInt(sessionStorage.getItem('feed-scrollPosition') ?? '0') < 100)
+      sessionStorage.setItem('feed-scrollPosition', document.documentElement.scrollTop.toString());
 }

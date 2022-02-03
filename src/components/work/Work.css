@@ -1,0 +1,32 @@
+.work {
+  width: 100vw;
+  height: 100vh;
+  overflow-x: none;
+}
+
+.threeContainer {
+  height: 100vh;
+  position: absolute;
+  visibility: hidden;
+  overflow: hidden;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
+
+#css3d {
+  overflow: hidden;
+}
+
+#webgl {
+  position: absolute;
+  /* top: 100%; */
+}
+
+.dummy {
+  height: 100vh;
+}
+
+section {
+  position: relative;
+}
