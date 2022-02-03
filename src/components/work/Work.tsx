@@ -1,5 +1,4 @@
 import gsap from 'gsap';
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import * as THREE from 'three';
 import  {animateScroll as scroll, scroller} from 'react-scroll';
 import WorkIntro from './pages/WorkIntro';

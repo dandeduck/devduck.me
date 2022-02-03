@@ -44,3 +44,9 @@ a:hover {
   text-decoration: none;
 }
 
+@media only screen and (min-width: 2000px) {
+  :root {
+    font-size: 20px;
+  }
+}
+
