@@ -45,6 +45,7 @@ export default function About() {
         <Experience company='This site' title='Front end developer' from={'January 2022'} to={'February 2022'} points={['Built using React, including Three.js, Firebase and gsap']}/>
         <Experience company='Flash 2020' title='Lead developer' from={'January 2020'} to={'March 2020'} points={['Code for the 2020 Flash FRC robot', 'Implemented autonomous movement with ball shooting using vision processing and speed interpolation', 'Collaborated with many other developers on the main systems of the robot']}/>
         <h2>To see more of my projects: go to</h2> <Link to={'/work'} className='link'>my work</Link> <h2>or</h2> <a href='https://github.com/dandeduck' className='link'>my github</a>
+        <div><h2>For my CV: <Link to="/logo192.png" className='link' target="_blank" download>download</Link></h2></div>
       </section>
     </div>
   );
