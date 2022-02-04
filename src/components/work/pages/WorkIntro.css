@@ -16,13 +16,16 @@
   margin-top: 7rem;
 }
 
-#start img {
+.arrow {
   width: 40px;
   filter: invert();
   position: absolute;
   bottom: 3rem;
   left: 50%;
 
+}
+
+.arrow .moving {
   animation: arrow-down 3s ease-in-out 0s infinite;
 }
 

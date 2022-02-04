@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Experience from './Experience';
 import duck from '../assets/test.jpg';
+import arrow from '../assets/arrowDown.svg';
 import './About.css';
 
 export default function About() {
@@ -23,10 +24,11 @@ export default function About() {
           <div className='about-text code-look'>
             <p>I've been developing software for more than 4 years, in many areas ranging from robotics to fullstack web development, where I am now.</p>
             <p>I have a strong passion for learning and developing new things.</p>
-            <p>You can read my about my experience in specific fields by going to the <Link className='link' to={'/work'}>work</Link> page or just continue scrolling to see my work experience.</p>
+            <p>You can read about my experience in specific fields by going to the <Link className='link' to={'/work'}>work</Link> page or just continue scrolling.</p>
           </div>
           <img src={duck} alt='myself'></img>
         </div>
+        <img src={arrow} alt='scroll' className='arrow'></img>
       </section>
       <section className='cv code-look'>
         <h1>Skills</h1>
@@ -51,7 +53,7 @@ export default function About() {
   );
 
   function introAnimations() {
-    gsap.fromTo('.about-content img',
+    gsap.fromTo('.about img',
     {
       opacity: 0
     },
