@@ -1,14 +1,13 @@
-import ContactRequest from './ContactRequest';
 import ContactForm from './ContactForm';
 import ContactInfo from './ContactInfo';
 import './Contact.css';
 
-export default function Contact(props: {handleContactRequest:  (contact : ContactRequest) => Promise<boolean>}) {
+export default function Contact() {
   return (
     <div className='contact code-look'>
       <h1 className='heading'>lets talk!</h1>
       <div className='contact-container'>
-        <ContactForm handleContactRequest={props.handleContactRequest}/>
+        <ContactForm/>
         <ContactInfo/>        
       </div>
     </div>
