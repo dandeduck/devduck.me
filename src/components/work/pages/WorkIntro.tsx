@@ -8,7 +8,7 @@ export default function WorkIntro() {
       <div className='work-intro-container'>
         <Quote sentence='Do or do not. There is no try.' source='Grand Master Yoda'/>
       </div>
-      <img src={arrow} alt='down'></img>
+      <img src={arrow} alt='scroll' className='arrow moving'></img>
     </div>
   );
 }

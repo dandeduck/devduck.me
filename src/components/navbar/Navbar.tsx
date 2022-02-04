@@ -11,7 +11,7 @@ export default function Navbar() {
           <img src={duck} className='neonDuck' alt="duck"/>
         </div>
         <Link to={'/'} className='navbar-link'>about-me</Link>
-        <Link to={'/'} className='navbar-link'>daily</Link>
+        <Link to={'/daily'} className='navbar-link'>daily</Link>
         <Link to={'/work'} className='navbar-link'>my-work</Link>
         <Link to={'/contact'} className='navbar-link'>contact</Link>
       </nav>
