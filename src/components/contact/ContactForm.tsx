@@ -34,6 +34,12 @@ export default function ContactForm() {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    if (contact.name === "" || contact.email === "" || contact.message === "") {
+      alert('All the fields must be filled out.');
+      return;
+    }
+
     setSending(true);
 
     let wasSent = (await handleContactRequest()).status;
