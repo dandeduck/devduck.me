@@ -16,6 +16,7 @@ export default function BlogAdder() {
 
   const onSubmit = () => {
     addPost(markdown, project, projectLink);
+    console.log(markdown);
     clearData();
   };
 
@@ -37,7 +38,7 @@ export default function BlogAdder() {
       <h2>Markdown</h2>
       <textarea value={markdown} onChange={e => {setMarkdown(e.target.value); localStorage.setItem('markdown', e.target.value);}}></textarea>
       <button onClick={onSubmit}>Upload</button>
-      <Post project={project} projectLink={projectLink} markdown={markdown} date={new Date()} now={new Date()}/>
+      <Post project={project} projectLink={projectLink} markdown={markdown.replaceAll('\n', '  \n')} date={new Date()} now={new Date()}/>
     </div>
   );
 }
