@@ -6,7 +6,7 @@ export default function Experience(props: {company: string, title: string, from:
       <h3>{props.from} - {props.to}</h3>
       <h2 className='company'>{props.company} </h2> <h2 className='position'> — {props.title}</h2>
       <ul>
-        {props.points.map(point => <li>{point}</li>)}
+        {props.points.map((point, i) => <li key={i}>{point}</li>)}
       </ul>
     </div>
   );
