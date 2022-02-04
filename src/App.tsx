@@ -23,7 +23,7 @@ export default function App() {
             <Route path="/work" element={<Work/>}/>
             <Route path="/daily" element={<Feed/>}/>
             <Route path="/admin" element={<Admin/>}/>
-            <Route path="/" element={<About/>}/>
+            <Route path="/*" element={<About/>}/>
           </Routes>
         </div>
       </BrowserRouter>

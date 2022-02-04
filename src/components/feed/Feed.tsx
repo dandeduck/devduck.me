@@ -40,8 +40,8 @@ export default function Daily() {
 
   return (
     <div className='Feed code-look'>
-      <Post markdown={long} project='Asteroids UNLIMITED' date={new Date(2022, 1, 24, 15, 50)} now={date}/>
-      <Post markdown={short} project='Tracer' date={new Date(2022, 1, 24, 10)} now={date}/>
+      <Post markdown={long} project='Asteroids UNLIMITED' projectLink='https://github.com/dandeduck/asteroids-unlimited' date={new Date(2022, 1, 24, 15, 50)} now={date}/>
+      <Post markdown={short} project='Tracer' projectLink='https://github.com/dandeduck/asteroids-unlimited' date={new Date(2022, 1, 24, 10)} now={date}/>
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import Login from './login/Login';
-import './Admin.css';
-import { useEffect, useState } from 'react';
+import BlogAdder from './BlogAdder';
+import { useEffect } from 'react';
 import { auth } from '../firebase/firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';
 
@@ -16,7 +16,7 @@ export default function Admin() {
   
   return (
     <div>
-      {user === null ? <Login/> : <h1>Logged in!</h1>}
+      {user === null ? <Login/> : <BlogAdder/>}
     </div>
   );
 }
