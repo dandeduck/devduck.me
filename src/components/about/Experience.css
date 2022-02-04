@@ -18,7 +18,7 @@
 }
 
 .experience li::before {
-  content: '⌲';
+  content: '⁍';
 
   color: var(--accent-orange);
   margin-right: 1rem;

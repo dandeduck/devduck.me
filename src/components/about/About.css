@@ -20,7 +20,11 @@
   gap: 2rem;
 }
 
-.about img {
+.about section:first-of-type {
+  height: calc(100vh - 12rem);
+}
+
+.about-content img {
   width: 20rem;
   box-shadow: 20px 10px var(--accent-orange);
 }
@@ -74,15 +78,33 @@
   }
 }
 
-.about .cv {
-  margin-top: 10rem;
+.cv h1:first-of-type {
+  margin-top: 0;
 }
 
 .cv h1 {
-  margin-top: 5rem;
+  margin-top: 3rem;
   font-size: 2rem;
 }
 
 .about .know {
   font-weight: bold;
+}
+
+.about .buttons {
+  margin-bottom: 3rem;
+}
+
+.cv a {
+  font-size: 1.5rem;
+}
+
+.cv h2 {
+  display: inline-block;
+}
+
+.cv img {
+  vertical-align: middle;
+  filter: invert();
+  width: 1.5rem;
 }
