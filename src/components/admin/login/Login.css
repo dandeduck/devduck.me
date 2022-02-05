@@ -1,0 +1,50 @@
+.login {
+  margin-top: 10rem;
+}
+
+.login h1 {
+  text-align: center;
+}
+
+.login .form {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.login span {
+  font-size: 1.5rem;
+  text-align: end;
+}
+
+.login input {
+  margin-left: 2rem;
+  color: white;
+  font-size: 1.5rem;
+  width: 18rem;
+  background: none;
+  border: solid white 1px;
+  border-radius: 6px;
+  font-family: 'Ubuntu Mono';
+}
+
+.login button {
+  color: white;
+  font-size: 1.5rem;
+  background: none;
+  border: solid white 1px;
+  border-radius: 6px;
+  font-family: 'Ubuntu Mono';
+  cursor: pointer;
+  width: 10rem;
+  margin-top: 2rem;
+  margin-inline: auto;
+
+  transition: all 250ms ease-in-out;
+}
+
+.login button:hover {
+  background: white;
+  color: black;
+}

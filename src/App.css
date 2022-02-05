@@ -28,6 +28,7 @@ code {
 .link {
   color: #58a6ff;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .link:hover {

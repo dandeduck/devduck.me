@@ -6,9 +6,11 @@ import Feed from './components/feed/Feed';
 import Contact from './components/contact/Contact';
 import Work from './components/work/Work';
 import About from './components/about/About';
+import Admin from './components/admin/Admin';
+import { addPost } from './components/firebase/posts';
 import './App.css';
 
-export default function App() {
+export default function App() {  
   gsap.registerPlugin(ScrollTrigger);
 
   return (
@@ -17,10 +19,11 @@ export default function App() {
         <Navbar/>
         <div className='container'>
           <Routes>
-            <Route path="/contact" element={<Contact handleContactRequest={() => {return Promise.resolve(true)}} />}/>
+            <Route path="/contact" element={<Contact/>}/>
             <Route path="/work" element={<Work/>}/>
             <Route path="/daily" element={<Feed/>}/>
-            <Route path="/" element={<About/>}/>
+            <Route path="/admin" element={<Admin/>}/>
+            <Route path="/*" element={<About/>}/>
           </Routes>
         </div>
       </BrowserRouter>

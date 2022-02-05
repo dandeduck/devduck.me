@@ -1,9 +1,11 @@
 {
   "hosting": {
+    "site": "devduck",
     "public": "build",
     "ignore": [
-      "**",
-      "!build/**"
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
     ],
     "rewrites": [
       {
@@ -11,5 +13,8 @@
         "destination": "/index.html"
       }
     ]
+  },
+  "database": {
+    "rules": "database.rules.json"
   }
 }
