@@ -31,3 +31,24 @@
   margin-inline: auto;
   transform: scale(0.5);
 }
+
+.notification {
+  position: fixed;
+  display: flex;
+  font-size: 1.2rem;
+  color: black;
+  top: 3.5rem;
+  left: 0;
+  height: fit-content;
+  padding-block: 0.5rem;
+  width: 100%;
+  background: white;
+  z-index: 100;
+  opacity: 0.9;
+
+  transform: translateY(-200px);
+}
+
+.notification span {
+  margin: auto;
+}

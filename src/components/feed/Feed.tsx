@@ -1,4 +1,6 @@
+import gsap from 'gsap';
 import Post from './Post';
+import { Link } from 'react-scroll';
 import { useEffect, useState, } from 'react';
 import { ScrollTrigger } from 'gsap/all';
 import { addPost, getAllPosts, getPosts, getServerTimestamp, subscribeToNewPosts, unsubscribeFromNewPosts } from '../firebase/posts';
@@ -11,19 +13,42 @@ export default function Daily() {
   const [isLoading, setIsLoading] = useState(true);
   const [isAllLoaded, setIsAllLoaded] = useState(false);
   const [loadTime, setLoadTime] = useState(Date.now());
+  const [newPost, setNewPost] = useState(false);
 
   useEffect(() => {
     setLoadTime(getServerTimestamp());
     fetchPosts(10);
+    const timeline = gsap.timeline();
   }, []);
   
   useEffect(() => {
-    subscribeToNewPosts(loadTime, (post) => {unsubscribeFromNewPosts(loadTime); setLoadTime(getServerTimestamp()); console.log(post, posts.length); setPosts([post].concat(posts));})
+    subscribeToNewPosts(loadTime, (post) => {unsubscribeFromNewPosts(loadTime); setLoadTime(getServerTimestamp()); setNewPost(true); setPosts([post].concat(posts));})
 
     return () => {
       unsubscribeFromNewPosts(loadTime);
     }
-  });
+  }, [posts]);
+
+  useEffect(() => {
+    if (newPost) {
+      gsap.timeline().fromTo('.notification',
+      {
+        y: -100,
+        opacity: 0
+      },
+      {
+        y: 0,
+        opacity: 0.9
+      })
+      .to('.notification',
+      {
+        delay: 5,
+        opacity: 0,
+        y: -200
+      });
+      setNewPost(false);
+    }
+  }, [newPost]);
   
   useEffect(() => {
     if (!isLoading) {
@@ -38,6 +63,7 @@ export default function Daily() {
   }, [isLoading, isAllLoaded]);
 
   const fetchPosts = async (amount: number) => {
+    console.log(posts.length);
     setIsLoading(true);
     const newPosts = await getPosts(posts.length ? posts[posts.length - 1].timestamp : Date.now(), amount);
     
@@ -64,6 +90,8 @@ export default function Daily() {
 
   return (
     <div className='Feed code-look'>
+      <span id='feed-start'></span>
+      <div className='notification'><span>Wow! there is a new post <Link to='feed-start' offset={-200} className='link' smooth={true}>check it out</Link></span></div>
       {posts.map((post, i) => <Post key={i} markdown={post.markdown} project={post.project} projectLink={post.projectLink} date={new Date(post.timestamp)}/>)}
       {isLoading && !isAllLoaded ? <div className='loading-container'><IphoneSpinner/></div> : <span></span>}
     </div>
