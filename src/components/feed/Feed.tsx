@@ -1,7 +1,7 @@
 import Post from './Post';
 import { useEffect, useState, } from 'react';
 import { ScrollTrigger } from 'gsap/all';
-import { addPost, getAllPosts, getPosts } from '../firebase/posts';
+import { addPost, getAllPosts, getPosts, getServerTimestamp, subscribeToNewPosts, unsubscribeFromNewPosts } from '../firebase/posts';
 import './Feed.css';
 import IphoneSpinner from '../general/IphoneSpinner';
 
@@ -10,12 +10,21 @@ export default function Daily() {
   const [posts, setPosts] = useState<{markdown: string, project: string, projectLink: string, timestamp: number}[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isAllLoaded, setIsAllLoaded] = useState(false);
+  const [loadTime, setLoadTime] = useState(Date.now());
 
   useEffect(() => {
-    setPosts([]);
+    setLoadTime(getServerTimestamp());
     fetchPosts(10);
   }, []);
+  
+  useEffect(() => {
+    subscribeToNewPosts(loadTime, (post) => {unsubscribeFromNewPosts(loadTime); setLoadTime(getServerTimestamp()); console.log(post, posts.length); setPosts([post].concat(posts));})
 
+    return () => {
+      unsubscribeFromNewPosts(loadTime);
+    }
+  });
+  
   useEffect(() => {
     if (!isLoading) {
       ScrollTrigger.create({

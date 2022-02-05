@@ -1,10 +1,11 @@
-import { push, ref, get, child, orderByChild, query, startAt, limitToFirst, limitToLast, QueryConstraint, startAfter, endBefore } from 'firebase/database'
+import { push, ref, get, child, orderByChild, query, startAt, limitToFirst, limitToLast, QueryConstraint, startAfter, endBefore, onChildAdded, onChildChanged, off } from 'firebase/database'
 import { db } from './firebase';
+import { Timestamp } from 'firebase/firestore';
 
 const dbRef = ref(db);
 
 export function addPost(markdown: string, project: string, projectLink: string) {
-  push(ref(db, "Posts"), {markdown: markdown, project: project, projectLink: projectLink, timestamp: {'.sv': 'timestamp'}});
+  push(ref(db, "Posts"), {markdown: markdown, project: project, projectLink: projectLink, timestamp: getServerTimestamp()});
 }
 
 export function getAllPosts() {
@@ -32,4 +33,22 @@ export function getPosts(before: number, amount: number) {
   
       return posts.reverse();
     });
+}
+
+export function subscribeToNewPosts(timeNow: number, onNewPost: (post: {markdown: string, project: string, projectLink: string, timestamp: number}) => void) {
+  onChildAdded(query(ref(db, "Posts"),
+    orderByChild("timestamp"),
+    limitToLast(1),
+    startAt(timeNow)), (snapshot) => onNewPost(snapshot.val()));
+}
+
+export function unsubscribeFromNewPosts(timeNow: number) {
+  off(query(ref(db, "Posts"),
+    orderByChild("timestamp"),
+    limitToLast(1),
+    startAt(timeNow)));
+}
+
+export function getServerTimestamp() {
+  return Timestamp.now().toMillis();
 }
