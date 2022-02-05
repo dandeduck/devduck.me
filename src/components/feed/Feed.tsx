@@ -18,7 +18,6 @@ export default function Daily() {
   useEffect(() => {
     setLoadTime(getServerTimestamp());
     fetchPosts(10);
-    const timeline = gsap.timeline();
   }, []);
   
   useEffect(() => {
@@ -51,21 +50,21 @@ export default function Daily() {
   }, [newPost]);
   
   useEffect(() => {
+    const localPosts = posts;
     if (!isLoading) {
       ScrollTrigger.create({
-        trigger: `.post:nth-of-type(${posts.length - 3})`,
+        trigger: `.post:nth-of-type(${localPosts.length - 3})`,
         start: "top bottom",
         end: "top bottom",
         once: true,
         onEnter: () => {fetchPosts(3)}
       });
     }
-  }, [isLoading, isAllLoaded]);
+  }, [isLoading, isAllLoaded, posts]);
 
   const fetchPosts = async (amount: number) => {
-    console.log(posts.length);
     setIsLoading(true);
-    const newPosts = await getPosts(posts.length ? posts[posts.length - 1].timestamp : Date.now(), amount);
+    const newPosts = await getPosts(posts.length ? posts[posts.length - 1].timestamp : getServerTimestamp(), amount);
     
     if (newPosts.length) {
       setPosts(posts.concat(newPosts));
