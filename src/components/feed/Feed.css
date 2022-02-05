@@ -22,3 +22,12 @@
     width: 70vw;
   }
 }
+
+.loading-container {
+  display: flex;
+}
+
+.lds-spinner {
+  margin-inline: auto;
+  transform: scale(0.5);
+}

@@ -3,14 +3,13 @@ import { useEffect, useState, } from 'react';
 import { ScrollTrigger } from 'gsap/all';
 import { addPost, getAllPosts, getPosts } from '../firebase/posts';
 import './Feed.css';
+import IphoneSpinner from '../general/IphoneSpinner';
 
 
 export default function Daily() {
   const [posts, setPosts] = useState<{markdown: string, project: string, projectLink: string, timestamp: number}[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isAllLoaded, setIsAllLoaded] = useState(false);
-
-  // addPost(`# test ${Math.random()}`, 'test', 'test');
 
   useEffect(() => {
     setPosts([]);
@@ -57,6 +56,7 @@ export default function Daily() {
   return (
     <div className='Feed code-look'>
       {posts.map((post, i) => <Post key={i} markdown={post.markdown} project={post.project} projectLink={post.projectLink} date={new Date(post.timestamp)}/>)}
+      {isLoading && !isAllLoaded ? <div className='loading-container'><IphoneSpinner/></div> : <span></span>}
     </div>
   );
 }
