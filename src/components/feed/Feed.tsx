@@ -90,7 +90,7 @@ export default function Daily() {
   return (
     <div className='Feed code-look'>
       <span id='feed-start'></span>
-      <div className='notification'><span>Wow! there is a new post <Link to='feed-start' offset={-200} className='link' smooth={true}>check it out</Link></span></div>
+      <div className='notification'><span>There is a new post! <Link to='feed-start' offset={-200} className='link' smooth={true}>check it out</Link></span></div>
       {posts.map((post, i) => <Post key={i} markdown={post.markdown} project={post.project} projectLink={post.projectLink} date={new Date(post.timestamp)}/>)}
       {isLoading && !isAllLoaded ? <div className='loading-container'><IphoneSpinner/></div> : <span></span>}
     </div>
