@@ -40,5 +40,21 @@
   .contact-form {
     margin-right: 5em;
   }
+
+  .contact-container {
+    flex-direction: column;
+  }
+
+  .contact-form {
+    margin-right: 0;
+  }
+
+  .submit {
+    margin-bottom: 0;
+  }
+  
+  .info {
+    transform: translateY(-2rem);
+  }
 }
 
