@@ -1,6 +1,5 @@
 import { FormEvent, useState } from 'react';
 import CodeInputField from './CodeInputField';
-import ContactRequest from './ContactRequest';
 import Comment from '../general/Comment';
 import IphoneSpinner from '../general/IphoneSpinner';
 import{ init, send } from '@emailjs/browser';
@@ -19,7 +18,7 @@ export default function ContactForm() {
   });
 
   const SendConfirmation = () => {
-    if (sent == 200)
+    if (sent === 200)
       return <span className='text confirmation'>sent!</span>;
     else if (sent > 0)
       return <span className='text confirmation'>error</span>;
@@ -46,7 +45,7 @@ export default function ContactForm() {
 
     setSent(wasSent);
 
-    if (wasSent == 200) {
+    if (wasSent === 200) {
       setContact({
         name: "",
         email: "",
