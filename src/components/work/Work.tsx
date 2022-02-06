@@ -15,8 +15,12 @@ const ids = ['start', 'game', 'web', 'robotics'];
 export default function Work() {
   useEffect(() => {
     scroll.scrollToTop();
+    moveFooter();
 
-    return () => {document.documentElement.scrollTop = 0}
+    return () => {
+      document.documentElement.scrollTop = 0
+      resetFooter();
+    }
   }, []);
   
   useEffect(() => {
@@ -66,6 +70,18 @@ export default function Work() {
       </section>
     </div>
   );
+}
+
+function moveFooter() {
+  const footer  = document.querySelector('.footer') as HTMLElement;
+  footer.style.position = 'absolute';
+  footer.style.top = '1100vh';
+}
+
+function resetFooter() {
+  const footer  = document.querySelector('.footer') as HTMLElement;
+  footer.style.position = 'relative';
+  footer.style.top = '0';
 }
 
 function makeAnchorLinksWork(object: CSS3DObject) {

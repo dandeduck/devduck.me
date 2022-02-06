@@ -78,6 +78,10 @@
   }
 }
 
+.cv {
+  margin-bottom: 3rem;
+}
+
 .cv h1:first-of-type {
   margin-top: 0;
 }
