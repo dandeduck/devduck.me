@@ -25,6 +25,7 @@
 
 .loading-container {
   display: flex;
+  transform: translateY(-2rem);
 }
 
 .lds-spinner {
