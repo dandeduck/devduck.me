@@ -26,7 +26,15 @@
 
 .about-content img {
   width: 20rem;
+  height: 20rem;
   box-shadow: 20px 10px var(--accent-orange);
+}
+
+@media only screen and (max-width: 1000px) {
+  .about-content img {
+    width: 15rem;
+    height: 15rem;
+  }
 }
 
 .about p {
