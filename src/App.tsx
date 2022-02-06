@@ -2,12 +2,12 @@ import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Navbar from './components/navbar/Navbar';
+import Footer from './components/footer/Footer';
 import Feed from './components/feed/Feed';
 import Contact from './components/contact/Contact';
 import Work from './components/work/Work';
 import About from './components/about/About';
 import Admin from './components/admin/Admin';
-import { addPost } from './components/firebase/posts';
 import './App.css';
 
 export default function App() {  
@@ -26,6 +26,7 @@ export default function App() {
             <Route path="/*" element={<About/>}/>
           </Routes>
         </div>
+        <Footer/>
       </BrowserRouter>
     </div>
   );
