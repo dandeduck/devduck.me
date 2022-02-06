@@ -83,8 +83,10 @@ export default function ContactForm() {
       </div>
       <button type='submit' className='submit code-look'>
         send
-        <SendConfirmation></SendConfirmation>
-        <Sending/>
+        <div className='send-container'>
+          <SendConfirmation></SendConfirmation>
+          <Sending/>
+        </div>
       </button>
     </form>
   );

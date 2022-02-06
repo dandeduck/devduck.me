@@ -36,14 +36,18 @@
 }
 
 .confirmation {
-  position: absolute;
   color: white;
   font-size: 1em;
-  left: 13rem;
 }
 
 .sending {
+  opacity: 1;
+  transform: translateY((1em));
+}
+
+.send-container {
   position: absolute;
-  transform: scale(0.5);
-  left: 13em; 
+  left: 10em;
+  bottom: 0;
+  padding-bottom: 0.5rem;
 }
