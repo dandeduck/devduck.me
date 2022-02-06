@@ -3,7 +3,7 @@ import Post from './Post';
 import { Link } from 'react-scroll';
 import { useEffect, useState, } from 'react';
 import { ScrollTrigger } from 'gsap/all';
-import { addPost, getAllPosts, getPosts, getServerTimestamp, subscribeToNewPosts, unsubscribeFromNewPosts } from '../firebase/posts';
+import { getPosts, getServerTimestamp, subscribeToNewPosts, unsubscribeFromNewPosts } from '../firebase/posts';
 import './Feed.css';
 import IphoneSpinner from '../general/IphoneSpinner';
 
