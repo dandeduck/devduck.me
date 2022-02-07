@@ -19,12 +19,13 @@
 
 @media only screen and (max-width: 1000px) {
   .Feed {
-    width: 70vw;
+    width: 90vh;
   }
 }
 
 .loading-container {
   display: flex;
+  transform: translateY(-2rem);
 }
 
 .lds-spinner {

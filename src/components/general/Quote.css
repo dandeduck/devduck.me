@@ -6,8 +6,14 @@
   margin-inline: auto;
 }
 
+@media only screen and (max-width: 1000px) {
+  .quote-container {
+    font-size: 0.9rem;
+  }
+}
+
 .quote {
-  font-size: 3rem;
+  font-size: 3em;
   quotes: "\201C""\201D";
 }
 
@@ -23,7 +29,7 @@ blockquote:before {
 .source {
   display: block;
 
-  font-size: 1rem;
+  font-size: 1em;
   font-style: italic;
   text-align: end;
   opacity: 0.8;
