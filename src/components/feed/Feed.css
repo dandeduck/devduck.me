@@ -1,0 +1,55 @@
+.Feed {
+  width: 60rem;
+  align-self: center;
+}
+
+.feed-start {
+  font-size: 1.5rem;
+}
+
+.feed-start::after {
+  content: '_';
+
+  animation: blink .75s step-end infinite;
+}
+
+.separator {
+  text-align: center;
+}
+
+@media only screen and (max-width: 1000px) {
+  .Feed {
+    width: 90vh;
+  }
+}
+
+.loading-container {
+  display: flex;
+  transform: translateY(-2rem);
+}
+
+.lds-spinner {
+  margin-inline: auto;
+  transform: scale(0.5);
+}
+
+.notification {
+  position: fixed;
+  display: flex;
+  font-size: 1.2rem;
+  color: black;
+  top: 3.5rem;
+  left: 0;
+  height: fit-content;
+  padding-block: 0.5rem;
+  width: 100%;
+  background: white;
+  z-index: 100;
+  opacity: 0.9;
+
+  transform: translateY(-200px);
+}
+
+.notification span {
+  margin: auto;
+}

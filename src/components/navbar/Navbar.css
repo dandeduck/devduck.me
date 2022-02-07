@@ -1,0 +1,71 @@
+.navContainer {
+  margin-bottom: 4rem;
+  position: sticky;
+  top: 0;
+  background: rgba(13, 17, 23, 0.7);
+  backdrop-filter: blur(4px);
+  z-index: 9999;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-inline: auto;
+
+  width: 60rem;
+}
+
+@media only screen and (max-width: 1000px) {
+  .navbar {
+    width: 90vh
+  }
+}
+
+.navbar-link {
+  margin-block: 1rem;
+  text-decoration: none;
+  position: relative;
+
+  color: white;
+  font-size: 1.5rem;
+
+  transition: all 250ms ease-in-out;
+}
+
+.navbar-link:hover {
+  text-decoration: none;
+  color: var(--accent-orange);
+}
+
+.neonDuck {
+  width: 50px;
+  
+  position: relative;
+}
+
+.duck {
+  position: relative;
+}
+
+.duck::after {
+  content: "- \"quack!\"";
+  /* content: ""; */
+  font-style: italic;
+  color: var(--accent-orange);
+
+  display: inline-block;
+  width: 5rem;
+  
+  position: absolute;
+  top: 3rem;
+  left: 1rem;
+  opacity: 0;
+
+  pointer-events: none;
+  transition: opacity 1000ms linear;
+}
+
+.duck:hover::after {
+  opacity: 0.8;
+}

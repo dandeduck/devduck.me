@@ -1,0 +1,60 @@
+.contact {
+  text-align: center;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  font-size: 16px;
+}
+
+.contact-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+}
+
+.heading {
+  font-size: 3rem;
+  margin: 0;
+  margin-bottom: 2em;
+}
+
+.contact-form {
+  margin-right: 10em;
+}
+
+@media only screen and (max-height: 1000px) {
+  .contact {
+    font-size: 12px;
+    transform: translateY(-1rem);
+  }
+  
+  .big {
+    height: 100px;
+  }
+
+  .heading {
+    margin-bottom: 1em;
+  }
+
+  .contact-form {
+    margin-right: 5em;
+  }
+
+  .contact-container {
+    flex-direction: column;
+  }
+
+  .contact-form {
+    margin-right: 0;
+  }
+
+  .submit {
+    margin-bottom: 0;
+  }
+  
+  .info {
+    transform: translateY(-2rem);
+  }
+}
+

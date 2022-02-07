@@ -1,0 +1,84 @@
+.post {
+  display: flex;
+  position: relative;
+
+  margin-bottom: 4rem;
+
+  background-color: var(--bg-secondary);
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.markdown {
+  padding-inline: 1rem;
+  word-wrap: break-word;
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+.console-start {
+  font-size: 1.5rem;
+  padding-top: 2rem;
+  height: fit-content;
+}
+
+.post-user {
+  color: #89DF34;
+}
+
+.post-dir {
+  color: #569cd6;
+}
+
+.post .markdown code {
+  background-color: #343941;
+  padding: 0.2rem 0.4rem;
+  border-radius: 6px;
+}
+
+.markdown pre {
+  background-color: #343941;
+  border-radius: 6px;
+}
+
+.post h1 {
+  display: inline-block;
+  padding-left: 1rem;
+  font-size: 1.5rem;
+}
+
+.post img {
+  width: 100%;
+}
+
+.markdown {
+  font-size: 1em;
+}
+
+.post a {
+  color: #58a6ff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.project {
+  position: absolute;
+  right: 0;
+  top: -1.5rem;
+
+  color: white;
+  opacity: 0.8;
+}
+
+.date {
+  position: absolute;
+  left: 0;
+  top: -1.5rem;
+  
+  color: white;
+  opacity: 0.8;
+}

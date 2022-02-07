@@ -1,0 +1,50 @@
+.entry {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.field {
+  font-family: 'Ubuntu Mono';
+  font-size: 1.5em;
+  text-align: center;
+  color: white;
+
+  display: inline-block;
+  width: 25em;
+  height: 2.5em;
+
+  background: none;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.big {
+  height: 15.625em;
+  text-align: start;
+  padding: 1em;
+  width: 23em;
+}
+
+.grey {
+  color: #808080;
+}
+
+.key-word {
+  font-size: 1.5em;
+  margin-inline: 1rem;
+  display: inline-block;
+  color: #569cd6;
+}
+
+.key-word::before {
+  content: '<';
+  color: #808080;
+}
+
+.key-word::after {
+  content: '>';
+  color: #808080;
+}

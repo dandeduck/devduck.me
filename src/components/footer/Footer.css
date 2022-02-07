@@ -1,0 +1,14 @@
+.footer {
+  display: flex;
+  width: 90%;
+  margin-inline: auto;
+  border-top: solid #21262c 1px;
+}
+
+.footer-content {
+  font-size: .9rem;
+  padding-block: 1rem;
+  margin: auto;
+  display: flex;
+  gap: 4rem;
+}

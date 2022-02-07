@@ -1,0 +1,53 @@
+.entries {
+  width: fit-content;
+  border-radius: 10px;
+  background: var(--bg-secondary);
+  padding-bottom: 2em;
+}
+
+.line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.line + .line {
+  margin-top: 3em;
+}
+
+.line-number {
+  text-align: start;
+  margin-left: 1em;
+  font-size: 1.5em;
+  color: #808080;
+}
+
+.submit {
+  position: relative;
+  background-color: white;
+  
+  padding: 0.5rem;
+  margin-top: 2em;
+  font-size: 2em;
+  border-radius: 5px;
+  border: 0;
+  align-self: center;
+  cursor: pointer;
+}
+
+.confirmation {
+  color: white;
+  font-size: 1em;
+}
+
+.sending {
+  opacity: 1;
+  transform: translateY((1em));
+}
+
+.send-container {
+  position: absolute;
+  left: 10em;
+  bottom: 0;
+  padding-bottom: 0.5rem;
+}

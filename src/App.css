@@ -1,0 +1,53 @@
+.App {
+  min-height: 100vh;
+  height: fit-content;
+  color: white;
+
+  margin-inline: auto;
+}
+
+.container {
+  width: fit-content;
+  margin-inline: auto;
+  min-height: calc(100vh - 11rem);
+}
+
+:root {
+  --accent-orange: #FFA500;
+  --bg-primary: #0D1117;
+  --bg-secondary: #161b22;
+}
+
+.code-look {
+  font-family: 'Ubuntu Mono', monospace;
+}
+
+code {
+  font-family: 'Ubuntu Mono', monospace;
+}
+
+.link {
+  color: #58a6ff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.link:active .link:visited {
+  color: #58a6ff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+@media only screen and (min-width: 2000px) {
+  :root {
+    font-size: 20px;
+  }
+}
+

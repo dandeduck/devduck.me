@@ -1,0 +1,36 @@
+.quote-container {
+  position: relative;
+  font-family: 'Times New Roman', Times, serif;
+  text-align: center;
+  width: fit-content;
+  margin-inline: auto;
+}
+
+@media only screen and (max-width: 1000px) {
+  .quote-container {
+    font-size: 0.9rem;
+  }
+}
+
+.quote {
+  font-size: 3em;
+  quotes: "\201C""\201D";
+}
+
+blockquote:before {
+  color: var(--accent-orange);
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+
+.source {
+  display: block;
+
+  font-size: 1em;
+  font-style: italic;
+  text-align: end;
+  opacity: 0.8;
+}
